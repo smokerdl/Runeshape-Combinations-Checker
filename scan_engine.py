@@ -360,6 +360,10 @@ class ScanEngine:
                     slot.locked = True
                     slot.locked_row = read
             else:
+                # Если цена не найдена, сбрасываем блокировку, 
+                # чтобы отобразился маркер отсутствия цены (или иконка)
+                slot.locked = False
+                slot.locked_row = None
                 slot.pending_name = None
                 slot.pending_count = 0
 

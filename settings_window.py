@@ -1,13 +1,14 @@
 """
 settings_window.py
 
-Оверлей в трее: при запуске разворачивается, при нажатии "-" или Старт
-сворачивается в трей. Нажатие на иконку трея разворачивает обратно.
+Оверлей в трее: при запуске разворачивается в правом нижнем углу экрана
+(над панелью задач), имитируя системные флайауты Windows.
 Дизайн полностью адаптирован под графический стиль Path of Exile 2.
-Стандартное окно ОС скрыто, реализована кастомная игровая панель управления.
+Стандартное окно ОС скрыто, перетаскивание отключено для интеграции с треем.
 """
 from __future__ import annotations
 
+import os
 import sys
 import math
 
@@ -49,33 +50,40 @@ POE_FONT_SANS = "Verdana"
 
 
 def _make_tray_icon() -> QIcon:
-    """Детализированная иконка для трея — золотая монета с буквами и рунами."""
+    """Загрузка официальной иконки логотипа приложения по абсолютному пути."""
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    for name in ["logo.png", "logo.webp", "logo.ico", "Logo.png", "Logo.webp", "Logo.ico"]:
+        for folder in ["icons", ""]:
+            path = os.path.join(base_dir, folder, name)
+            if os.path.exists(path):
+                icon = QIcon(path)
+                if not icon.isNull():
+                    return icon
+
+    # Резервный динамический вариант (золотая монета)
     pix = QPixmap(32, 32)
     pix.fill(Qt.transparent)
     painter = QPainter(pix)
     painter.setRenderHint(QPainter.Antialiasing)
 
-    # Золотая монета (фон)
     painter.setBrush(QColor("#8B6914"))
     painter.setPen(QColor("#FFD700"))
     painter.drawEllipse(1, 1, 30, 30)
 
-    # Декоративный край
     painter.setPen(QPen(QColor("#B8860B"), 1))
     painter.drawEllipse(3, 3, 26, 26)
 
-    # Руны вокруг
     painter.setPen(QColor("#FFD700"))
     font_rune = QFont(POE_FONT_SANS, 7)
     painter.setFont(font_rune)
-    runes = ["ᚱ", "ᚢ", "ᚾ", "ᛖ", "ᛋ", "ᚼ", "ᚷ", "ᛚ"]
+    runes = ["ᚱ", "ᚢ", "ᚾ", "", "ᛋ", "ᚼ", "ᚷ", "ᛚ"]
     for i in range(8):
         angle = i * 45
         x = 16 + 11 * math.cos(math.radians(angle - 90))
         y = 16 + 11 * math.sin(math.radians(angle - 90))
         painter.drawText(QPoint(int(x - 3), int(y + 3)), runes[i])
 
-    # Буква "R" по центру
     painter.setPen(QColor("#FFD700"))
     font_r = QFont(POE_FONT_SERIF, 16, QFont.Bold)
     painter.setFont(font_r)
@@ -88,6 +96,7 @@ class _Bridge(QObject):
     state_changed = Signal(list, bool, bool)
     prices_updated = Signal()
     hotkey_pressed = Signal()
+    hotkey_captured = Signal(str)  # Сигнал для безопасной передачи клавиши из потока pynput
 
 
 class _PriceFetchWorker(QThread):
@@ -110,7 +119,6 @@ class _PriceFetchWorker(QThread):
 # --- Кастомные виджеты в стиле PoE2 ---
 
 class PoeLabel(QLabel):
-    """Лейбл с serif шрифтом и золотым/серым цветом текста."""
     def __init__(self, text="", parent=None, is_title=False, is_secondary=False):
         super().__init__(text, parent)
         font_family = POE_FONT_SERIF if is_title or not is_secondary else POE_FONT_SANS
@@ -125,7 +133,6 @@ class PoeLabel(QLabel):
 
 
 class PoeComboBox(QComboBox):
-    """Выпадающий список со сложной бронзовой рамкой и исправленным отображением элементов."""
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setEditable(False)
@@ -159,7 +166,6 @@ class PoeComboBox(QComboBox):
         """)
 
     def paintEvent(self, event):
-        """Рисуем кастомную стрелочку-треугольник."""
         super().paintEvent(event)
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)
@@ -181,7 +187,6 @@ class PoeComboBox(QComboBox):
 
 
 class PoeButton(QPushButton):
-    """Базовый класс для кнопок со сложной рамкой и градиентом."""
     def __init__(self, text="", parent=None, is_primary=False):
         super().__init__(text, parent)
         self.setFont(QFont(POE_FONT_SERIF, 10, QFont.Bold))
@@ -218,7 +223,6 @@ class PoeButton(QPushButton):
         painter.setPen(QPen(POE_FRAME_COLOR, 1.5))
         painter.drawRoundedRect(rect.adjusted(1, 1, -1, -1), 2, 2)
 
-        # Угловые декоративные элементы
         painter.setPen(QPen(POE_FRAME_COLOR, 1))
         c = 5
         painter.drawLine(0, c, 0, 0)
@@ -246,7 +250,6 @@ class PoeSecondaryButton(PoeButton):
 # --- Управляющие кнопки для кастомной шапки окна ---
 
 class PoeMinimizeButton(QPushButton):
-    """Кастомный круглый минус для сворачивания."""
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setFixedSize(20, 20)
@@ -267,7 +270,6 @@ class PoeMinimizeButton(QPushButton):
 
 
 class PoeCloseButton(QPushButton):
-    """Кастомный мрачно-красный крестик закрытия из PoE2."""
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setFixedSize(20, 20)
@@ -296,7 +298,7 @@ class MainWindow(QWidget):
         self.setWindowTitle("Runeshape Combinations Checker")
         self.setFixedWidth(400)
         
-        # Полностью отключаем системное оформление Windows (Frameless)
+        # Frameless окно без системных рамок ОС
         self.setWindowFlags(Qt.Window | Qt.FramelessWindowHint)
         self.setStyleSheet(f"background-color: {POE_BG_COLOR.name()};")
 
@@ -307,33 +309,32 @@ class MainWindow(QWidget):
         self._fetch_worker: _PriceFetchWorker | None = None
         self._hotkey_listener = None
         self._rebinding = False
-        self._drag_pos = None  # Для перемещения окна
 
         self._bridge = _Bridge()
         self._bridge.prices_updated.connect(self._update_status_label)
         self._bridge.hotkey_pressed.connect(self._on_start_stop)
+        self._bridge.hotkey_captured.connect(self._on_hotkey_captured)  # Подключаем безопасный обработчик хоткея
 
         self._build_ui()
         self._build_tray()
         self._load_config_and_start()
         self._start_hotkey_listener()
+        
+        # Принудительно позиционируем в угол при инициализации
+        self._position_at_bottom_right()
 
-    # --- Поддержка перетаскивания окна мышью ---
-
-    def mousePressEvent(self, event):
-        if event.button() == Qt.LeftButton:
-            if event.position().y() < 40:
-                self._drag_pos = event.globalPosition().toPoint() - self.frameGeometry().topLeft()
-                event.accept()
-
-    def mouseMoveEvent(self, event):
-        if event.buttons() == Qt.LeftButton and self._drag_pos is not None:
-            self.move(event.globalPosition().toPoint() - self._drag_pos)
-            event.accept()
-
-    def mouseReleaseEvent(self, event):
-        self._drag_pos = None
-        event.accept()
+    def _position_at_bottom_right(self) -> None:
+        """Динамический расчет координат для жесткой привязки к правому нижнему углу 
+        экрана с учетом высоты панели задач (Taskbar) Windows."""
+        self.adjustSize()  # Пересчитываем высоту окна под контент
+        screen = QApplication.primaryScreen()
+        if screen:
+            geom = screen.availableGeometry()  # Рабочая область БЕЗ панели задач
+            margin = 12  # Отступ от краев экрана/панели задач для красоты (стиль Win11)
+            
+            x = geom.right() - self.width() - margin
+            y = geom.bottom() - self.height() - margin
+            self.move(x, y)
 
     # --- Отрисовка красивой общей рамки вокруг окна ---
 
@@ -351,7 +352,7 @@ class MainWindow(QWidget):
         layout.setSpacing(8)
         layout.setContentsMargins(15, 12, 15, 15)
 
-        # Кастомная верхняя панель (Шапка) вместо системной
+        # Кастомная верхняя панель (Шапка)
         title_row = QHBoxLayout()
         title_row.setContentsMargins(0, 0, 0, 5)
         title_row.addSpacing(46)
@@ -447,10 +448,26 @@ class MainWindow(QWidget):
         self._tray.show()
 
     def _on_tray_activated(self, reason: QSystemTrayIcon.ActivationReason) -> None:
+        """Поведение как у Windows Volume/Network панелей: клик по иконке переключает 
+        состояние (Toggle) — открывает или сворачивает окно."""
         if reason == QSystemTrayIcon.ActivationReason.Trigger:
+            if self.isVisible() and not self.isMinimized():
+                self.hide()
+            else:
+                self._show_from_tray()
+        elif reason == QSystemTrayIcon.ActivationReason.DoubleClick:
+            # При двойном клике гарантированно разворачиваем и выводим на передний план
             self._show_from_tray()
 
     def _show_from_tray(self) -> None:
+        """Разворачивание окна из трея — всегда обновляем положение над панелью задач."""
+        self._position_at_bottom_right()
+        
+        # Сбрасываем внутреннее состояние свёрнутости ОС Windows, 
+        # иначе окно останется висеть минимизированным в таскбаре.
+        if self.isMinimized():
+            self.setWindowState(Qt.WindowNoState)
+            
         self.show()
         self.raise_()
         self.activateWindow()
@@ -473,6 +490,7 @@ class MainWindow(QWidget):
         else:
             self.region_label.setText("Не откалибровано")
         self._refresh_start_button_enabled()
+        self._position_at_bottom_right()  # Текст мог изменить высоту виджета
 
     def _update_hotkey_label(self) -> None:
         self.hotkey_label.setText(self._config.start_stop_hotkey.upper())
@@ -505,6 +523,7 @@ class MainWindow(QWidget):
 
     def _on_fetch_failed(self, msg: str) -> None:
         self.status_label.setText(f"Ошибка загрузки цен: {msg}")
+        self._position_at_bottom_right()
 
     def _update_status_label(self) -> None:
         if self._repo is None:
@@ -512,9 +531,10 @@ class MainWindow(QWidget):
         fetched = self._repo.last_fetched_at
         fetched_str = fetched.strftime("%d.%m %H:%M") if fetched else "никогда"
         self.status_label.setText(
-            f"{self._repo.item_count} позиций загружено  ·  обновлено {fetched_str}"
+            f"{self._repo.item_count} позиции загружено  ·  обновлено {fetched_str}"
         )
         self._refresh_start_button_enabled()
+        self._position_at_bottom_right()
 
     def _on_league_changed(self, idx: int) -> None:
         text = self.league_box.itemText(idx)
@@ -561,7 +581,6 @@ class MainWindow(QWidget):
                 self._overlay.hide()
                 self._overlay = None
             self.start_stop_button.setText("Старт")
-            self._show_from_tray()
 
     def _on_engine_state(self, rows: list[PriceRow], confirmed: bool, reading: bool) -> None:
         self._bridge.state_changed.emit(rows, confirmed, reading)
@@ -585,6 +604,7 @@ class MainWindow(QWidget):
             print(f"[hotkey] не удалось зарегистрировать хоткей '{key}': {ex}")
 
     def _on_rebind_click(self) -> None:
+        """Перевод интерфейса в режим бесконечного ожидания нажатия клавиши."""
         if self._rebinding:
             return
         self._rebinding = True
@@ -592,41 +612,44 @@ class MainWindow(QWidget):
         self.rebind_button.setText("...")
         self.hotkey_label.setText("Нажмите клавишу")
 
-        captured = []
+        # На время переназначения отключаем основной глобальный бинд
+        if self._hotkey_listener is not None:
+            try:
+                self._hotkey_listener.stop()
+            except Exception:
+                pass
 
         def on_press(key):
             try:
-                key_name = key.char if hasattr(key, 'char') and key.char else key.name
+                if hasattr(key, 'char') and key.char:
+                    key_name = key.char.lower()
+                else:
+                    key_name = key.name.lower()
             except Exception:
-                key_name = str(key).replace("Key.", "")
-            if key_name and key_name not in ("esc", "escape"):
-                captured.append(key_name)
-                try:
-                    self._hotkey_listener.stop()
-                except Exception:
-                    pass
-                listener.stop()
+                key_name = str(key).replace("Key.", "").lower()
 
-        def on_release(key):
-            pass
+            # Безопасно передаем пойманную кнопку в главный GUI-поток через сигналы Qt
+            if key_name:
+                self._bridge.hotkey_captured.emit(key_name)
+            
+            return False  # Остановка локального Listener (pynput) после первого нажатия
 
-        def finish():
-            if captured:
-                new_key = captured[0]
-                self._config.start_stop_hotkey = new_key
-                config_module.save(self._config)
-                self._update_hotkey_label()
-                self._start_hotkey_listener()
-            else:
-                self._update_hotkey_label()
-                self._start_hotkey_listener()
-            self._rebinding = False
-            self.rebind_button.setEnabled(True)
-            self.rebind_button.setText("Изменить")
-
-        listener = kb.Listener(on_press=on_press, on_release=on_release)
+        # Запуск асинхронного слушателя одной клавиши
+        listener = kb.Listener(on_press=on_press)
         listener.start()
-        QTimer.singleShot(300, finish)
+
+    def _on_hotkey_captured(self, new_key: str) -> None:
+        """Слот, выполняющийся в главном потоке Qt при успешном перехвате клавиши."""
+        if new_key not in ("esc", "escape"):
+            self._config.start_stop_hotkey = new_key
+            config_module.save(self._config)
+        
+        self._update_hotkey_label()
+        self._start_hotkey_listener()  # Перезапускаем глобальный фоновый перехватчик с новым хоткеем
+        
+        self._rebinding = False
+        self.rebind_button.setEnabled(True)
+        self.rebind_button.setText("Изменить")
 
     # --- Завершение работы ---
 
@@ -662,4 +685,8 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()
+    
+    window.raise_()
+    window.activateWindow()
+    
     sys.exit(app.exec())
