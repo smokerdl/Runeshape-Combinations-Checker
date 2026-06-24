@@ -1,0 +1,1038 @@
+[
+    {
+        "en": "5x Random Currency",
+        "ru": "5 шт. случайной валюты"
+    },
+    {
+        "en": "Adaptive Alloy",
+        "ru": "Адаптивный сплав"
+    },
+    {
+        "en": "Adept Rune",
+        "ru": "Руна искусности"
+    },
+    {
+        "en": "Aldur's Legacy",
+        "ru": "Наследие Альдура"
+    },
+    {
+        "en": "Aldur's Saga",
+        "ru": "Сага Альдура"
+    },
+    {
+        "en": "Ancient Rune of Animosity",
+        "ru": "Древняя руна вражды"
+    },
+    {
+        "en": "Ancient Rune of Control",
+        "ru": "Древняя руна правления"
+    },
+    {
+        "en": "Ancient Rune of Decay",
+        "ru": "Древняя руна тлена"
+    },
+    {
+        "en": "Ancient Rune of Detonation",
+        "ru": "Древняя руна подрыва"
+    },
+    {
+        "en": "Ancient Rune of Discovery",
+        "ru": "Древняя руна находки"
+    },
+    {
+        "en": "Ancient Rune of Dueling",
+        "ru": "Древняя руна поединка"
+    },
+    {
+        "en": "Ancient Rune of Prowess",
+        "ru": "Древняя руна мастерства"
+    },
+    {
+        "en": "Ancient Rune of Retaliation",
+        "ru": "Древняя руна расплаты"
+    },
+    {
+        "en": "Ancient Rune of Shattering",
+        "ru": "Древняя руна разбивания"
+    },
+    {
+        "en": "Ancient Rune of Splinters",
+        "ru": "Древняя руна осколков"
+    },
+    {
+        "en": "Ancient Rune of Witchcraft",
+        "ru": "Древняя руна ведьмовства"
+    },
+    {
+        "en": "Ancient Rune of the Horde",
+        "ru": "Древняя руна орды"
+    },
+    {
+        "en": "Ancient Rune of the Titan",
+        "ru": "Древняя руна Титана"
+    },
+    {
+        "en": "Animus Exchange",
+        "ru": "Обмен анимой"
+    },
+    {
+        "en": "Animus Splinters",
+        "ru": "Осколки анимы"
+    },
+    {
+        "en": "Arcanist's Etcher",
+        "ru": "Резец чародея"
+    },
+    {
+        "en": "Armourer's Scrap",
+        "ru": "Деталь доспеха"
+    },
+    {
+        "en": "Artificer's Orb",
+        "ru": "Сфера астромантии"
+    },
+    {
+        "en": "Astrid's Creativity",
+        "ru": "Изобретательность Астрид"
+    },
+    {
+        "en": "Betrayal of Aldur",
+        "ru": "Предательство Альдура"
+    },
+    {
+        "en": "Bitter Dead",
+        "ru": "Стылые трупы"
+    },
+    {
+        "en": "Blacksmith's Whetstone",
+        "ru": "Точильный камень"
+    },
+    {
+        "en": "Blazing Flux",
+        "ru": "Жгучий расплав"
+    },
+    {
+        "en": "Body Rune",
+        "ru": "Руна тела"
+    },
+    {
+        "en": "Breath of Aldur",
+        "ru": "Дыхание Альдура"
+    },
+    {
+        "en": "Cadigan's Epiphany",
+        "ru": "Озарение Кадигана"
+    },
+    {
+        "en": "Celestial Alloy",
+        "ru": "Небесный сплав"
+    },
+    {
+        "en": "Chaos Orb",
+        "ru": "Сфера хаоса"
+    },
+    {
+        "en": "Chilling Flux",
+        "ru": "Студёный расплав"
+    },
+    {
+        "en": "Cleansing Flame",
+        "ru": "Очищающее пламя"
+    },
+    {
+        "en": "Concussive Runes",
+        "ru": "Сотрясающие руны"
+    },
+    {
+        "en": "Conductive Runes",
+        "ru": "Проводящие руны"
+    },
+    {
+        "en": "Countess Seske's Rune of Archery",
+        "ru": "Руна меткости графини Сеске"
+    },
+    {
+        "en": "Courtesan Mannan's Rune of Cruelty",
+        "ru": "Руна жестокости куртизанки Маннан"
+    },
+    {
+        "en": "Crackling Flux",
+        "ru": "Искрящий расплав"
+    },
+    {
+        "en": "Craiceann's Rune of Recovery",
+        "ru": "Руна восстановления Краценна"
+    },
+    {
+        "en": "Craiceann's Rune of Warding",
+        "ru": "Руна барьера Краценна"
+    },
+    {
+        "en": "Cyclonic Alloy",
+        "ru": "Вихревой сплав"
+    },
+    {
+        "en": "Defensive Alloy",
+        "ru": "Защитный сплав"
+    },
+    {
+        "en": "Desert Rune",
+        "ru": "Руна пустыни"
+    },
+    {
+        "en": "Detonate Living",
+        "ru": "Взрывная агония"
+    },
+    {
+        "en": "Divine Orb",
+        "ru": "Божественная сфера"
+    },
+    {
+        "en": "Eternal March",
+        "ru": "Вечный марш"
+    },
+    {
+        "en": "Exalted Orb",
+        "ru": "Сфера возвышения"
+    },
+    {
+        "en": "Explosive Transmutation",
+        "ru": "Взрывное преображение"
+    },
+    {
+        "en": "Farrul's Rune of Grace",
+        "ru": "Руна грации Фаррул"
+    },
+    {
+        "en": "Farrul's Rune of the Chase",
+        "ru": "Руна погони Фаррул"
+    },
+    {
+        "en": "Farrul's Rune of the Hunt",
+        "ru": "Руна охоты Фаррул"
+    },
+    {
+        "en": "Fenumus' Rune of Agony",
+        "ru": "Руна агонии Фенумы"
+    },
+    {
+        "en": "Fenumus' Rune of Draining",
+        "ru": "Руна высушивания Фенумы"
+    },
+    {
+        "en": "Fenumus' Rune of Spinning",
+        "ru": "Руна плетения Фенумы"
+    },
+    {
+        "en": "Fist of Kalguur",
+        "ru": "Кулак Калгуура"
+    },
+    {
+        "en": "Fragments Of The Past",
+        "ru": "Фрагменты прошлого"
+    },
+    {
+        "en": "Frostflame Nova",
+        "ru": "Кольцо морозного пламени"
+    },
+    {
+        "en": "Gemcutter's Prism",
+        "ru": "Призма камнереза"
+    },
+    {
+        "en": "Glacial Rune",
+        "ru": "Руна ледника"
+    },
+    {
+        "en": "Glassblower's Bauble",
+        "ru": "Стекольная масса"
+    },
+    {
+        "en": "Greater Chaos Orb",
+        "ru": "Большая сфера хаоса"
+    },
+    {
+        "en": "Greater Exalted Orb",
+        "ru": "Большая сфера возвышения"
+    },
+    {
+        "en": "Greater Jeweller's Orb",
+        "ru": "Большая сфера златокузнеца"
+    },
+    {
+        "en": "Greater Orb of Augmentation",
+        "ru": "Большая сфера усиления"
+    },
+    {
+        "en": "Greater Orb of Transmutation",
+        "ru": "Большая сфера превращения"
+    },
+    {
+        "en": "Greater Regal Orb",
+        "ru": "Большая сфера царей"
+    },
+    {
+        "en": "Greater Rune of Body",
+        "ru": "Большая руна тела"
+    },
+    {
+        "en": "Greater Rune of Charging",
+        "ru": "Большая руна заряда"
+    },
+    {
+        "en": "Greater Rune of Craft",
+        "ru": "Большая руна искусности"
+    },
+    {
+        "en": "Greater Rune of Inspiration",
+        "ru": "Большая руна вдохновения"
+    },
+    {
+        "en": "Greater Rune of Iron",
+        "ru": "Большая руна железа"
+    },
+    {
+        "en": "Greater Rune of Mind",
+        "ru": "Большая руна разума"
+    },
+    {
+        "en": "Greater Rune of Power",
+        "ru": "Большая руна мощи"
+    },
+    {
+        "en": "Greater Rune of Rebirth",
+        "ru": "Большая руна перерождения"
+    },
+    {
+        "en": "Greater Rune of Resolve",
+        "ru": "Большая руна решительности"
+    },
+    {
+        "en": "Greater Rune of Stone",
+        "ru": "Большая руна камня"
+    },
+    {
+        "en": "Greater Rune of Storms",
+        "ru": "Большая руна шторма"
+    },
+    {
+        "en": "Greater Rune of Vision",
+        "ru": "Большая руна видения"
+    },
+    {
+        "en": "Greater Rune of Ward",
+        "ru": "Большая руна барьера"
+    },
+    {
+        "en": "Greater Rune of the Desert",
+        "ru": "Большая руна пустыни"
+    },
+    {
+        "en": "Greater Rune of the Glacier",
+        "ru": "Большая руна ледника"
+    },
+    {
+        "en": "Grim Pillars",
+        "ru": "Мрачные столпы"
+    },
+    {
+        "en": "Healing Runes",
+        "ru": "Исцеляющие руны"
+    },
+    {
+        "en": "Hedgewitch Assandra's Rune of Wisdom",
+        "ru": "Руна мудрости лесной ведьмы Ассандры"
+    },
+    {
+        "en": "Hinekora's Lock",
+        "ru": "Прядь Хинекоры"
+    },
+    {
+        "en": "Hollow Shell",
+        "ru": "Пустая оболочка"
+    },
+    {
+        "en": "Inspiration Rune",
+        "ru": "Руна вдохновения"
+    },
+    {
+        "en": "Ire of Aldur",
+        "ru": "Гнев Альдура"
+    },
+    {
+        "en": "Iron Rune",
+        "ru": "Руна железа"
+    },
+    {
+        "en": "Katla's Gloom",
+        "ru": "Мрачность Катлы"
+    },
+    {
+        "en": "Kolr's Hunt",
+        "ru": "Охота Колра"
+    },
+    {
+        "en": "Krillson's Bay Key",
+        "ru": "Ключ к Бухте Криллсона"
+    },
+    {
+        "en": "Lady Hestra's Rune of Winter",
+        "ru": "Руна зимы леди Гестры"
+    },
+    {
+        "en": "Lesser Adept Rune",
+        "ru": "Малая руна искусности"
+    },
+    {
+        "en": "Lesser Body Rune",
+        "ru": "Малая руна тела"
+    },
+    {
+        "en": "Lesser Charging Rune",
+        "ru": "Малая руна заряда"
+    },
+    {
+        "en": "Lesser Desert Rune",
+        "ru": "Малая руна пустыни"
+    },
+    {
+        "en": "Lesser Glacial Rune",
+        "ru": "Малая руна ледника"
+    },
+    {
+        "en": "Lesser Inspiration Rune",
+        "ru": "Малая руна вдохновения"
+    },
+    {
+        "en": "Lesser Iron Rune",
+        "ru": "Малая руна железа"
+    },
+    {
+        "en": "Lesser Jeweller's Orb",
+        "ru": "Малая сфера златокузнеца"
+    },
+    {
+        "en": "Lesser Mind Rune",
+        "ru": "Малая руна разума"
+    },
+    {
+        "en": "Lesser Rebirth Rune",
+        "ru": "Малая руна перерождения"
+    },
+    {
+        "en": "Lesser Resolve Rune",
+        "ru": "Малая руна решительности"
+    },
+    {
+        "en": "Lesser Robust Rune",
+        "ru": "Малая руна мощи"
+    },
+    {
+        "en": "Lesser Stone Rune",
+        "ru": "Малая руна камня"
+    },
+    {
+        "en": "Lesser Storm Rune",
+        "ru": "Малая руна шторма"
+    },
+    {
+        "en": "Lesser Vision Rune",
+        "ru": "Малая руна видения"
+    },
+    {
+        "en": "Lesser Ward Rune",
+        "ru": "Малая руна барьера"
+    },
+    {
+        "en": "Leylines",
+        "ru": "Силовые линии"
+    },
+    {
+        "en": "Masterwork Rune",
+        "ru": "Мастерская руна"
+    },
+    {
+        "en": "Medved's Boon",
+        "ru": "Дар Медведю"
+    },
+    {
+        "en": "Medved's Saga",
+        "ru": "Сага Медведя"
+    },
+    {
+        "en": "Medved's Tending",
+        "ru": "Присмотр Медведя"
+    },
+    {
+        "en": "Mind Rune",
+        "ru": "Руна разума"
+    },
+    {
+        "en": "Mirror of Kalandra",
+        "ru": "Зеркало Каландры"
+    },
+    {
+        "en": "Mystic Alloy",
+        "ru": "Мистический сплав"
+    },
+    {
+        "en": "Olroth's Boon",
+        "ru": "Дар Олроту"
+    },
+    {
+        "en": "Olroth's Saga",
+        "ru": "Сага Олрота"
+    },
+    {
+        "en": "Orb of Alchemy",
+        "ru": "Сфера алхимии"
+    },
+    {
+        "en": "Orb of Annulment",
+        "ru": "Сфера отмены"
+    },
+    {
+        "en": "Orb of Augmentation",
+        "ru": "Сфера усиления"
+    },
+    {
+        "en": "Orb of Chance",
+        "ru": "Сфера удачи"
+    },
+    {
+        "en": "Orb of Transmutation",
+        "ru": "Сфера превращения"
+    },
+    {
+        "en": "Passion of Aldur",
+        "ru": "Страсть Альдура"
+    },
+    {
+        "en": "Perfect Chaos Orb",
+        "ru": "Совершенная сфера хаоса"
+    },
+    {
+        "en": "Perfect Exalted Orb",
+        "ru": "Совершенная сфера возвышения"
+    },
+    {
+        "en": "Perfect Flux",
+        "ru": "Сфера Узазы"
+    },
+    {
+        "en": "Perfect Jeweller's Orb",
+        "ru": "Совершенная сфера златокузнеца"
+    },
+    {
+        "en": "Perfect Orb of Augmentation",
+        "ru": "Совершенная сфера усиления"
+    },
+    {
+        "en": "Perfect Orb of Transmutation",
+        "ru": "Совершенная сфера превращения"
+    },
+    {
+        "en": "Perfect Regal Orb",
+        "ru": "Совершенная сфера царей"
+    },
+    {
+        "en": "Powered by Verisium",
+        "ru": "Питание веризием"
+    },
+    {
+        "en": "Prismatic Alloy",
+        "ru": "Радужный сплав"
+    },
+    {
+        "en": "Rain of Blades",
+        "ru": "Дождь клинков"
+    },
+    {
+        "en": "Rare Unique Item",
+        "ru": "Редкий уникальный предмет"
+    },
+    {
+        "en": "Rebirth Rune",
+        "ru": "Руна перерождения"
+    },
+    {
+        "en": "Refutation",
+        "ru": "Отвержение"
+    },
+    {
+        "en": "Regal Orb",
+        "ru": "Сфера царей"
+    },
+    {
+        "en": "Remnants of Kalguur",
+        "ru": "Реликты Калгуура"
+    },
+    {
+        "en": "Repulsion",
+        "ru": "Отталкивание"
+    },
+    {
+        "en": "Resolve Rune",
+        "ru": "Руна решительности"
+    },
+    {
+        "en": "Robust Rune",
+        "ru": "Руна мощи"
+    },
+    {
+        "en": "Rune of Accumulation",
+        "ru": "Руна накопления"
+    },
+    {
+        "en": "Rune of Acrobatics",
+        "ru": "Руна акробатики"
+    },
+    {
+        "en": "Rune of Charging",
+        "ru": "Руна заряда"
+    },
+    {
+        "en": "Rune of Confrontation",
+        "ru": "Руна противоборства"
+    },
+    {
+        "en": "Rune of Consistency",
+        "ru": "Руна постоянства"
+    },
+    {
+        "en": "Rune of Culmination",
+        "ru": "Руна кульминации"
+    },
+    {
+        "en": "Rune of Foundations",
+        "ru": "Руна основ"
+    },
+    {
+        "en": "Rune of Reach",
+        "ru": "Руна охвата"
+    },
+    {
+        "en": "Rune of Renown",
+        "ru": "Руна славы"
+    },
+    {
+        "en": "Rune of Vital Flame",
+        "ru": "Руна живого пламени"
+    },
+    {
+        "en": "Rune of Vitality",
+        "ru": "Руна живучести"
+    },
+    {
+        "en": "Rune of the Blossom",
+        "ru": "Руна цветения"
+    },
+    {
+        "en": "Rune of the Hunt",
+        "ru": "Руна охоты"
+    },
+    {
+        "en": "Rune of the Prism",
+        "ru": "Руна призмы"
+    },
+    {
+        "en": "Runeforged Blades",
+        "ru": "Руннокованые клинки"
+    },
+    {
+        "en": "Runic Alloy",
+        "ru": "Рунный сплав"
+    },
+    {
+        "en": "Runic Extraction",
+        "ru": "Рунное извлечение"
+    },
+    {
+        "en": "Runic Infusion",
+        "ru": "Рунное насыщение"
+    },
+    {
+        "en": "Runic Reprieve",
+        "ru": "Рунное отведение"
+    },
+    {
+        "en": "Saqawal's Rune of Erosion",
+        "ru": "Руна эрозии Сакаваля"
+    },
+    {
+        "en": "Saqawal's Rune of Memory",
+        "ru": "Руна памяти Сакаваля"
+    },
+    {
+        "en": "Saqawal's Rune of the Sky",
+        "ru": "Руна неба Сакаваля"
+    },
+    {
+        "en": "Serle's Triumph",
+        "ru": "Триумф Серли"
+    },
+    {
+        "en": "Skyfall",
+        "ru": "Падение небес"
+    },
+    {
+        "en": "Sovereign Alloy",
+        "ru": "Державный сплав"
+    },
+    {
+        "en": "Stone Rune",
+        "ru": "Руна камня"
+    },
+    {
+        "en": "Storm Rune",
+        "ru": "Руна шторма"
+    },
+    {
+        "en": "Swift Alloy",
+        "ru": "Экспансивный сплав"
+    },
+    {
+        "en": "Thane Girt's Rune of Wildness",
+        "ru": "Руна дикости тана Гирта"
+    },
+    {
+        "en": "Thane Grannell's Rune of Mastery",
+        "ru": "Руна мастерства тана Граннеля"
+    },
+    {
+        "en": "Thane Leld's Rune of Spring",
+        "ru": "Руна весны тана Лельда"
+    },
+    {
+        "en": "Thane Myrk's Rune of Summer",
+        "ru": "Руна лета тана Мирка"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 10)",
+        "ru": "Чародейский расплав (Уровень 10)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 11)",
+        "ru": "Чародейский расплав (Уровень 11)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 12)",
+        "ru": "Чародейский расплав (Уровень 12)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 13)",
+        "ru": "Чародейский расплав (Уровень 13)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 14)",
+        "ru": "Чародейский расплав (Уровень 14)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 15)",
+        "ru": "Чародейский расплав (Уровень 15)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 16)",
+        "ru": "Чародейский расплав (Уровень 16)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 17)",
+        "ru": "Чародейский расплав (Уровень 17)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 18)",
+        "ru": "Чародейский расплав (Уровень 18)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 19)",
+        "ru": "Чародейский расплав (Уровень 19)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 20)",
+        "ru": "Чародейский расплав (Уровень 20)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 5)",
+        "ru": "Чародейский расплав (Уровень 5)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 6)",
+        "ru": "Чародейский расплав (Уровень 6)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 7)",
+        "ru": "Чародейский расплав (Уровень 7)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 8)",
+        "ru": "Чародейский расплав (Уровень 8)"
+    },
+    {
+        "en": "Thaumaturgic Flux (Level 9)",
+        "ru": "Чародейский расплав (Уровень 9)"
+    },
+    {
+        "en": "The Greatwolf's Rune of Claws",
+        "ru": "Руна когтей Великого волка"
+    },
+    {
+        "en": "The Greatwolf's Rune of Willpower",
+        "ru": "Руна воли Великого волка"
+    },
+    {
+        "en": "The Runebinder's Alloy",
+        "ru": "Сплав Повелителя рун"
+    },
+    {
+        "en": "The Runefather's Alloy",
+        "ru": "Сплав Рунного отца"
+    },
+    {
+        "en": "Thrud's Might",
+        "ru": "Сила Трада"
+    },
+    {
+        "en": "Transcendent Alloy",
+        "ru": "Возвышенный сплав"
+    },
+    {
+        "en": "Triskelion Cascade",
+        "ru": "Каскад Трискелиона"
+    },
+    {
+        "en": "Uhtred's Boon",
+        "ru": "Дар Утреду"
+    },
+    {
+        "en": "Uhtred's Saga",
+        "ru": "Сага Утреда"
+    },
+    {
+        "en": "Uhtred's Sidereus",
+        "ru": "Сидерий Утреда"
+    },
+    {
+        "en": "Uncut Skill Gem",
+        "ru": "Неогранённый камень умения"
+    },
+    {
+        "en": "Uncut Skill Gem (Level 19)",
+        "ru": "Неогранённый камень умения (уровень 19)"
+    },
+    {
+        "en": "Uncut Skill Gem (Level 20)",
+        "ru": "Неогранённый камень умения (уровень 20)"
+    },
+    {
+        "en": "Uncut Spirit Gem",
+        "ru": "Неогранённый камень духа"
+    },
+    {
+        "en": "Uncut Spirit Gem (Level 19)",
+        "ru": "Неогранённый камень духа (уровень 19)"
+    },
+    {
+        "en": "Uncut Spirit Gem (Level 20)",
+        "ru": "Неогранённый камень духа (уровень 20)"
+    },
+    {
+        "en": "Uncut Support Gem",
+        "ru": "Неогранённый камень поддержки"
+    },
+    {
+        "en": "Unique Amulet",
+        "ru": "Уникальный амулет"
+    },
+    {
+        "en": "Unique Belt",
+        "ru": "Уникальный пояс"
+    },
+    {
+        "en": "Unique Body Armour",
+        "ru": "Уникальный нательный доспех"
+    },
+    {
+        "en": "Unique Boots",
+        "ru": "Уникальные сапоги"
+    },
+    {
+        "en": "Unique Bow",
+        "ru": "Уникальный лук"
+    },
+    {
+        "en": "Unique Crossbow",
+        "ru": "Уникальный самострел"
+    },
+    {
+        "en": "Unique Focus",
+        "ru": "Уникальный фокус"
+    },
+    {
+        "en": "Unique Gloves",
+        "ru": "Уникальные перчатки"
+    },
+    {
+        "en": "Unique Helmet",
+        "ru": "Уникальный шлем"
+    },
+    {
+        "en": "Unique Jewellery",
+        "ru": "Уникальная бижутерия"
+    },
+    {
+        "en": "Unique One Hand Mace",
+        "ru": "Уникальная одноручная булава"
+    },
+    {
+        "en": "Unique Quarterstaff",
+        "ru": "Уникальный боевой посох"
+    },
+    {
+        "en": "Unique Quiver",
+        "ru": "Уникальный колчан"
+    },
+    {
+        "en": "Unique Ring",
+        "ru": "Уникальное кольцо"
+    },
+    {
+        "en": "Unique Sceptre",
+        "ru": "Уникальный скипетр"
+    },
+    {
+        "en": "Unique Shield",
+        "ru": "Уникальный щит"
+    },
+    {
+        "en": "Unique Spear",
+        "ru": "Уникальное копьё"
+    },
+    {
+        "en": "Unique Staff",
+        "ru": "Уникальный посох"
+    },
+    {
+        "en": "Unique Talisman",
+        "ru": "Уникальный талисман"
+    },
+    {
+        "en": "Unique Two Hand Mace",
+        "ru": "Уникальная двуручная булава"
+    },
+    {
+        "en": "Unique Wand",
+        "ru": "Уникальный жезл"
+    },
+    {
+        "en": "Verisium Manifestations",
+        "ru": "Веризиевые проявления"
+    },
+    {
+        "en": "Verisium Ore",
+        "ru": "Груда веризия"
+    },
+    {
+        "en": "Very Rare Unique item",
+        "ru": "Очень редкий уникальный предмет"
+    },
+    {
+        "en": "Vision Rune",
+        "ru": "Руна видения"
+    },
+    {
+        "en": "Void Flux",
+        "ru": "Пустотный расплав"
+    },
+    {
+        "en": "Voltaic Barrier",
+        "ru": "Электрический барьер"
+    },
+    {
+        "en": "Vorana's Boon",
+        "ru": "Дар Воране"
+    },
+    {
+        "en": "Vorana's Carnage",
+        "ru": "Резня Вораны"
+    },
+    {
+        "en": "Vorana's Saga",
+        "ru": "Сага Вораны"
+    },
+    {
+        "en": "Ward Rune",
+        "ru": "Руна барьера"
+    },
+    {
+        "en": "Wardbound Minions",
+        "ru": "Барьерные приспешники"
+    },
+    {
+        "en": "Warding Rune of Annihilation",
+        "ru": "Барьерная руна уничтожения"
+    },
+    {
+        "en": "Warding Rune of Armature",
+        "ru": "Барьерная руна панциря"
+    },
+    {
+        "en": "Warding Rune of Bodyguards",
+        "ru": "Барьерная руна телохранителей"
+    },
+    {
+        "en": "Warding Rune of Cleaving",
+        "ru": "Барьерная руна расщепления"
+    },
+    {
+        "en": "Warding Rune of Courage",
+        "ru": "Барьерная руна храбрости"
+    },
+    {
+        "en": "Warding Rune of Despair",
+        "ru": "Барьерная руна отчаяния"
+    },
+    {
+        "en": "Warding Rune of Equinox",
+        "ru": "Барьерная руна равноденствия"
+    },
+    {
+        "en": "Warding Rune of Fortification",
+        "ru": "Барьерная руна укрепления"
+    },
+    {
+        "en": "Warding Rune of Glancing",
+        "ru": "Барьерная руна скольжения"
+    },
+    {
+        "en": "Warding Rune of Heart",
+        "ru": "Барьерная руна сердца"
+    },
+    {
+        "en": "Warding Rune of Hollowing",
+        "ru": "Барьерная руна опустошения"
+    },
+    {
+        "en": "Warding Rune of Nourishment",
+        "ru": "Барьерная руна пропитания"
+    },
+    {
+        "en": "Warding Rune of Obsession",
+        "ru": "Барьерная руна одержимости"
+    },
+    {
+        "en": "Warding Rune of Protection",
+        "ru": "Барьерная руна защиты"
+    },
+    {
+        "en": "Warding Rune of Salvaging",
+        "ru": "Барьерная руна обломков"
+    },
+    {
+        "en": "Warding Rune of Stability",
+        "ru": "Барьерная руна устойчивости"
+    },
+    {
+        "en": "Warding Rune of Symbiosis",
+        "ru": "Барьерная руна симбиоза"
+    }
+]
