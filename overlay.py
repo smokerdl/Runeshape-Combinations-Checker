@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import os
+import sys
 
 from PySide6.QtCore import Qt, QTimer
 from PySide6.QtGui import QColor, QFont, QPainter, QPixmap, QFontMetrics
@@ -66,7 +67,8 @@ class PriceOverlay(QWidget):
 
     def _init_custom_icon(self) -> None:
         """Загрузка, масштабирование и динамическое перекрашивание иконки die_game.png."""
-        self._icon_path = os.path.join("icons", "die_game.png")
+        _base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+        self._icon_path = os.path.join(_base, "icons", "die_game.png")
         self._has_icon = os.path.exists(self._icon_path)
         self._tinted_icon = None
         self._shadow_icon = None

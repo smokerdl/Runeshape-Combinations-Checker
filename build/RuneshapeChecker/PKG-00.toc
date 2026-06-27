@@ -1,0 +1,68 @@
+('C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+ 'Checker\\build\\RuneshapeChecker\\RuneshapeChecker.pkg',
+ {'BINARY': True,
+  'DATA': True,
+  'EXECUTABLE': True,
+  'EXTENSION': True,
+  'PYMODULE': True,
+  'PYSOURCE': True,
+  'PYZ': False,
+  'SPLASH': True,
+  'SYMLINK': False},
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\build\\RuneshapeChecker\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\build\\RuneshapeChecker\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\build\\RuneshapeChecker\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\build\\RuneshapeChecker\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\build\\RuneshapeChecker\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\build\\RuneshapeChecker\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgutil',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
+  ('pyi_rth_pyside6',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pyside6.py',
+   'PYSOURCE'),
+  ('settings_window',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\settings_window.py',
+   'PYSOURCE')],
+ 'python311.dll',
+ True,
+ False,
+ False,
+ [],
+ None,
+ None,
+ None)

@@ -330,10 +330,11 @@ class MainWindow(QWidget):
         screen = QApplication.primaryScreen()
         if screen:
             geom = screen.availableGeometry()  # Рабочая область БЕЗ панели задач
-            margin = 12  # Отступ от краев экрана/панели задач для красоты (стиль Win11)
-            
+            margin = 12        # Отступ от краёв экрана
+            bottom_margin = 60  # Увеличен чтобы не перекрываться с панелью задач
+
             x = geom.right() - self.width() - margin
-            y = geom.bottom() - self.height() - margin
+            y = geom.bottom() - self.height() - bottom_margin
             self.move(x, y)
 
     # --- Отрисовка красивой общей рамки вокруг окна ---

@@ -13,7 +13,8 @@ from __future__ import annotations
 import json
 import re
 
-from rapidfuzz.distance import Levenshtein
+# Импортируем продвинутые инструменты умного поиска вместо базового Левенштейна
+from rapidfuzz import fuzz, process
 
 
 # --- Регулярные выражения ---
@@ -22,7 +23,7 @@ from rapidfuzz.distance import Levenshtein
 # префиксы ОТСУТСТВУЮТ (проверено: 0 записей с "Умение:"/"Поддержка:" в JSON),
 # поэтому их нужно срезать до поиска. Не привязан к началу строки — OCR-мусор
 # от иконок часто стоит ПЕРЕД префиксом ("› | & Умение: ...").
-_CATEGORY_PREFIX_RE = re.compile(r"(Умение|Поддержка)\s*:\s*", re.IGNORECASE)
+_CATEGORY_PREFIX_RE = re.compile(r"(Умение|Поддержка)\s*:\\s*", re.IGNORECASE)
 
 # Множитель количества — число в круглых скобках СТРОГО В КОНЦЕ строки.
 # "Чародейский расплав (Уровень 19) (1)" -> 1 (а не 19 — скобки с "Уровень"
@@ -144,10 +145,9 @@ class RuTranslator:
 
         # 2. Нечёткое совпадение — ПРОПУСКАЕТСЯ для строк с номером уровня
         if not has_level:
-            best_key = self._best_fuzzy(ru_key)
+            best_key, score = self._best_fuzzy(ru_key)
             if best_key is not None:
                 en = self._dict[best_key]
-                score = Levenshtein.normalized_similarity(ru_key, best_key)
                 self._log(
                     f"[RuTranslator] НЕЧЁТКО '{raw_ocr_text.strip()}' -> ключ='{best_key}' "
                     f"-> '{en}' x{multiplier} совпадение={score:.2f}"
@@ -172,17 +172,27 @@ class RuTranslator:
         self._log(f"[RuTranslator] НЕТ СОВПАДЕНИЯ для '{raw_ocr_text.strip()}' (ключ='{ru_key}')")
         return None, multiplier
 
-    def _best_fuzzy(self, ru_key: str) -> str | None:
-        best_key = None
-        best_score = FUZZY_THRESHOLD
-        for key in self._dict:
-            if abs(len(key) - len(ru_key)) > FUZZY_MAX_LEN_DIFF:
-                continue
-            score = Levenshtein.normalized_similarity(ru_key, key)
-            if score > best_score:
-                best_score = score
-                best_key = key
-        return best_key
+    def _best_fuzzy(self, ru_key: str) -> tuple[str | None, float]:
+        """Ищет лучшее частичное совпадение с помощью алгоритмов rapidfuzz."""
+        # Фильтруем кандидатов по длине, сохраняя оригинальное ограничение проекта для безопасности
+        candidates = [key for key in self._dict if abs(len(key) - len(ru_key)) <= FUZZY_MAX_LEN_DIFF]
+        
+        if not candidates:
+            return None, 0.0
+
+        # Используем partial_ratio, чтобы успешно находить "сфера удачи" внутри "р сфера удачи 1"
+        result = process.extractOne(
+            ru_key,
+            candidates,
+            scorer=fuzz.partial_ratio,
+            score_cutoff=FUZZY_THRESHOLD * 100  # Переводим порог (0.82) в шкалу rapidfuzz (82.0)
+        )
+        
+        if result:
+            best_key, score, _ = result
+            return best_key, score / 100.0  # Возвращаем к исходному диапазону 0.0 - 1.0
+            
+        return None, 0.0
 
     def _best_suffix(self, ru_key: str) -> str | None:
         suffix_key = None
