@@ -28,7 +28,7 @@ from screen_capture import capture_region
 
 
 # --- Тайминги цикла ---
-MIN_SCAN_INTERVAL_SECONDS = 1.0     # не чаще раза в секунду, см. договорённость по производительности
+MIN_SCAN_INTERVAL_SECONDS = 0.5     # не чаще раза в секунду, см. договорённость по производительности
 BRIGHTNESS_POLL_INTERVAL_SECONDS = 0.2   # дешёвая проверка яркости — чаще, для отзывчивости
 HEARTBEAT_EVERY_N_POLLS = 25         # ~раз в 5 секунд при BRIGHTNESS_POLL_INTERVAL_SECONDS=0.2
 
@@ -45,7 +45,7 @@ SAMPLE_COLS = 12
 # --- Анти-дребезг блокировки строк (см. ТЗ 8.2 / RowSlot в C#) ---
 MERGE_Y_TOLERANCE = 20
 CONFIRM_READS_FOR_FUZZY = 2     # нечёткие совпадения подтверждаются 2 одинаковыми чтениями подряд
-EVICT_AFTER_MISSES = 3            # слот удаляется после стольких пропусков подряд
+EVICT_AFTER_MISSES = 1            # слот удаляется после стольких пропусков подряд
 
 # --- Поиск цены по переведённому EN-имени (см. ТЗ 6.5) ---
 PRICE_FUZZY_THRESHOLD = 0.84
