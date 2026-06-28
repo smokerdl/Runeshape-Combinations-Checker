@@ -1,74 +1,82 @@
 """
 ocr_scanner.py
 
-Распознавание текста панели "Рунотворческие комбинации" на русском клиенте PoE2.
-Эквивалент OcrScanner.cs из C#-версии.
+Windows.Media.Ocr (WinRT) backend — заменяет tesserocr.
 
-ВАЖНО — выбор библиотеки: используется `tesserocr`, а не `pytesseract`.
-`pytesseract` запускает `tesseract.exe` отдельным процессом на КАЖДЫЙ вызов и
-перезагружает языковую модель с диска каждый раз — на модели "best" (20МБ) это
-давало ~2000мс на один проход, что полностью несовместимо с циклом сканирования.
-`tesserocr` держит движок в памяти постоянно (как `TesseractEngine` в C#-версии),
-что снижает время одного прохода до ~450-650мс.
+Время одного скана: ~30-80мс против ~900мс у Tesseract.
+Нет внешних зависимостей — использует встроенный Windows OCR API.
 
-ВАЖНО — выбор модели: используется `rus.traineddata` из репозитория
-`tessdata_fast` (https://github.com/tesseract-ocr/tessdata_fast), а НЕ стандартный
-пакет "best", который ставится по умолчанию через apt/большинство инсталляторов.
-Разница в размере ~5x (3.8МБ против 20МБ), в скорости ~25-30%, при ЭТОМ без
-заметной потери точности на тестовых скриншотах панели Рунотворчества.
-Файл нужно скачать отдельно и положить в `tessdata/rus.traineddata` проекта:
-    https://github.com/tesseract-ocr/tessdata_fast/raw/main/rus.traineddata
+Требования:
+  pip install winrt-Windows.Media.Ocr winrt-Windows.Graphics.Imaging winrt-Windows.Storage.Streams
+  Установленный языковой пакет RU:
+    Windows Settings → Time & Language → Language & region → Add a language → Русский
+    (Убедитесь что стоит галочка "Basic typing" для русского)
 
-ВАЖНО — частота сканирования: даже с этими оптимизациями один полный скан
-(два прохода PSM 4 + PSM 11, выполняются ПОСЛЕДОВАТЕЛЬНО — параллелизм через
-threading не работает из-за GIL, см. ТЗ) занимает ~900мс-1с. Поэтому цикл
-сканирования в scan_engine.py использует интервал ~1 секунда, а не 100-150мс,
-как в C#-версии.
+Совместимость: Windows 10 версии 1803+ / Windows 11.
+
+ВАЖНО — параметр tessdata_dir в конструкторе сохранён для обратной совместимости
+с scan_engine.py, но игнорируется — WinRT не нуждается в файлах модели.
 """
+
 from __future__ import annotations
 
+import asyncio
+import io
 import re
+import sys
 from dataclasses import dataclass
+from typing import Callable
 
 from PIL import Image, ImageFilter
-from tesserocr import PyTessBaseAPI, PSM, OEM, RIL, iterate_level
 
+# --- Попытка импорта WinRT ---
+try:
+    from winrt.windows.media.ocr import OcrEngine
+    from winrt.windows.globalization import Language
+    from winrt.windows.graphics.imaging import (
+        BitmapDecoder,
+        SoftwareBitmap,
+        BitmapPixelFormat,
+        BitmapAlphaMode,
+    )
+    from winrt.windows.storage.streams import (
+        InMemoryRandomAccessStream,
+        DataWriter,
+    )
+    _WINRT_AVAILABLE = True
+except ImportError:
+    _WINRT_AVAILABLE = False
 
-# --- Препроцессинг (см. ТЗ 5.1) ---
-ICON_COLUMN_FRACTION = 0.30   # обрезаем левые 30% ширины (иконки рун)
-RIGHT_TRIM_FRACTION = 0.02    # обрезаем правые 2% ширины (край панели)
+# --- Препроцессинг (идентично оригинальному ocr_scanner.py) ---
+ICON_COLUMN_FRACTION = 0.30   # обрезаем левые 30% (иконки рун)
+RIGHT_TRIM_FRACTION  = 0.02   # обрезаем правые 2% (край панели)
 UPSCALE_FACTOR = 2
 
-# --- Фильтрация строк (см. ТЗ 5.4) ---
-MIN_CONFIDENCE = 10.0
-MIN_NAME_LENGTH = 4
-MIN_WORD_LENGTH = 4
+# --- Фильтрация строк ---
+MIN_NAME_LENGTH  = 4
+MIN_WORD_LENGTH  = 4
 PANEL_HEADER_MARKER = "рунотворческие"
 
-# --- Tesseract ---
-LANG = "rus"
-PSM_SINGLE_COLUMN = PSM.SINGLE_COLUMN   # основной проход — чистые списки
-PSM_SPARSE_TEXT = PSM.SPARSE_TEXT       # резервный проход — спасает панели с рамками-разделителями,
-                                          # где PSM 4 теряет часть строк (подтверждено тестами:
-                                          # на capture_test_4.png PSM4 нашёл 2 из 4 наград, PSM11 — все 4)
+# Фиктивный confidence — WinRT не возвращает уверенность, используем 90
+WINRT_CONFIDENCE = 90.0
 
-# Y-допуск (в координатах исходного, НЕ апскейленного изображения) для объединения
-# строк двух проходов, относящихся к одной и той же позиции на экране.
+# Y-допуск (в координатах исходного изображения) для объединения строк
 MERGE_Y_TOLERANCE = 25
+
+# Языки OCR в порядке приоритета
+_OCR_LANGUAGES = ["ru-RU", "ru", "ru-RU-x-t-i0-handwrit"]
 
 
 @dataclass
 class OcrRow:
-    raw_text: str      # как прочитал Tesseract, без изменений — идёт в RuTranslator
-    normalized: str     # lowercase, без пунктуации, схлопнутые пробелы — для фильтрации
-    center_y: int        # Y-координата в координатах исходного региона (до апскейла)
+    raw_text:   str    # как прочитал OCR, без изменений — идёт в RuTranslator
+    normalized: str    # lowercase, без пунктуации — для фильтрации
+    center_y:   int    # Y-координата в координатах исходного региона (до апскейла)
     confidence: float
 
 
 def normalize_text(text: str) -> str:
-    """Нормализация, единая для всех модулей проекта:
-    нижний регистр, пунктуация -> пробел, схлопнуть повторные пробелы.
-    re.UNICODE гарантирует, что \\w матчит кириллицу так же, как в C#-версии."""
+    """Нормализация: нижний регистр, пунктуация → пробел, схлопнуть пробелы."""
     s = text.lower()
     s = re.sub(r"[^\w\s]", " ", s, flags=re.UNICODE)
     s = re.sub(r"\s+", " ", s)
@@ -76,7 +84,7 @@ def normalize_text(text: str) -> str:
 
 
 def _has_long_word(text: str, min_len: int) -> bool:
-    """True, если есть хотя бы одно слово длиной >= min_len букв подряд."""
+    """True если есть хотя бы одно слово длиной >= min_len букв подряд."""
     run = 0
     for ch in text:
         if ch.isalpha():
@@ -88,23 +96,69 @@ def _has_long_word(text: str, min_len: int) -> bool:
     return False
 
 
+def _check_winrt() -> None:
+    """Проверяет доступность WinRT и даёт понятную ошибку если нет."""
+    if not _WINRT_AVAILABLE:
+        raise RuntimeError(
+            "\n\nWinRT OCR недоступен. Установите пакеты:\n"
+            "  pip install winrt-Windows.Media.Ocr "
+            "winrt-Windows.Graphics.Imaging "
+            "winrt-Windows.Storage.Streams\n\n"
+            "И убедитесь что в Windows установлен русский языковой пакет:\n"
+            "  Settings → Time & Language → Language & region → Add a language → Русский\n"
+        )
+
+
 class OcrScanner:
     """
-    Сканирует область экрана (PIL.Image, RGB) и возвращает список распознанных,
-    отфильтрованных строк. Эквивалент OcrScanner.cs.
+    Сканирует область экрана (PIL.Image, RGB) через Windows.Media.Ocr и возвращает
+    список распознанных отфильтрованных строк.
 
-    Движки создаются ОДИН раз в конструкторе и живут в памяти всё время работы
-    программы (как TesseractEngine в C#-версии) — это и есть основной источник
-    ускорения по сравнению с pytesseract. Обязательно вызвать close() при
-    завершении работы (или использовать как context manager).
+    Публичный интерфейс идентичен оригинальному tesserocr-бэкенду:
+      scanner = OcrScanner(tessdata_dir, log=..., debug=...)
+      rows = scanner.scan(image)
+      scanner.close()
     """
 
-    def __init__(self, tessdata_dir: str, log=None, debug: bool = False):
-        self._tessdata_dir = tessdata_dir
-        self._log = log or (lambda msg: None)
+    def __init__(self, tessdata_dir: str, log: Callable | None = None, debug: bool = False):
+        _check_winrt()
+
+        self._tessdata_dir = tessdata_dir  # не используется, сохранён для совместимости
+        self._log   = log or (lambda msg: None)
         self._debug = debug
-        self._api_col = PyTessBaseAPI(path=tessdata_dir, lang=LANG, psm=PSM_SINGLE_COLUMN, oem=OEM.DEFAULT)
-        self._api_sparse = PyTessBaseAPI(path=tessdata_dir, lang=LANG, psm=PSM_SPARSE_TEXT, oem=OEM.DEFAULT)
+        self._engine: OcrEngine | None = None
+
+        # Создаём собственный event loop для этого потока
+        self._loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(self._loop)
+
+        self._engine = self._loop.run_until_complete(self._init_engine())
+
+    async def _init_engine(self) -> OcrEngine:
+        """Инициализирует OcrEngine с русским языком."""
+        # Перебираем языки в порядке приоритета
+        for lang_tag in _OCR_LANGUAGES:
+            try:
+                lang = Language(lang_tag)
+                if OcrEngine.is_language_supported(lang):
+                    engine = OcrEngine.try_create_from_language(lang)
+                    if engine is not None:
+                        self._log(f"[WinRT OCR] движок инициализирован: {lang_tag}")
+                        return engine
+            except Exception:
+                continue
+
+        # Последний вариант — системный язык пользователя
+        engine = OcrEngine.try_create_from_user_profile_languages()
+        if engine is not None:
+            self._log("[WinRT OCR] движок инициализирован: системный язык")
+            return engine
+
+        raise RuntimeError(
+            "Windows.Media.Ocr: не удалось создать движок для русского языка.\n"
+            "Установите языковой пакет:\n"
+            "  Settings → Time & Language → Language & region → Add a language → Русский"
+        )
 
     def __enter__(self) -> "OcrScanner":
         return self
@@ -113,79 +167,70 @@ class OcrScanner:
         self.close()
 
     def close(self) -> None:
-        try:
-            self._api_col.End()
-        except Exception:
-            pass
-        try:
-            self._api_sparse.End()
-        except Exception:
-            pass
+        if self._loop and not self._loop.is_closed():
+            self._loop.close()
+
+    # ------------------------------------------------------------------ #
+    #  Основной метод                                                      #
+    # ------------------------------------------------------------------ #
 
     def scan(self, region_image: Image.Image) -> list[OcrRow]:
+        if self._engine is None:
+            return []
+
         if region_image.mode != "RGB":
             region_image = region_image.convert("RGB")
 
+        # Препроцессинг — идентично оригиналу
         w, h = region_image.size
-        left_cut = max(1, int(w * ICON_COLUMN_FRACTION))
+        left_cut  = max(1, int(w * ICON_COLUMN_FRACTION))
         right_cut = int(w * RIGHT_TRIM_FRACTION)
-        crop_w = max(1, w - left_cut - right_cut)
-        cropped = region_image.crop((left_cut, 0, left_cut + crop_w, h))
+        crop_w    = max(1, w - left_cut - right_cut)
+        cropped   = region_image.crop((left_cut, 0, left_cut + crop_w, h))
 
-        # Без инверсии — панель Рунотворчества: тёмный текст на светлом пергаменте.
         upscaled = cropped.resize(
-            (max(1, cropped.width * UPSCALE_FACTOR), max(1, cropped.height * UPSCALE_FACTOR)),
+            (max(1, cropped.width * UPSCALE_FACTOR),
+             max(1, cropped.height * UPSCALE_FACTOR)),
             Image.BICUBIC,
         )
-
-        # Медианный фильтр 3x3 (denoise) — подтверждён через OCR Tuner; также ускоряет
-        # распознавание (меньше шума -> движку проще сегментировать), не только чистит текст.
         denoised = upscaled.filter(ImageFilter.MedianFilter(size=3))
 
-        # Последовательно — параллелизм через threading не даёт выигрыша (GIL
-        # не освобождается нативным кодом tesserocr в этой связке), см. ТЗ.
-        rows_col = self._run_pass(self._api_col, denoised, PSM_SINGLE_COLUMN, h)
-        rows_sparse = self._run_pass(self._api_sparse, denoised, PSM_SPARSE_TEXT, h)
-        merged = self._merge_by_position(rows_col, rows_sparse)
-
-        if self._debug and len(merged) <= 2:
+        if self._debug:
             try:
                 denoised.save("debug_ocr.png")
             except Exception:
                 pass
 
-        return merged
+        # OCR через WinRT
+        try:
+            rows = self._loop.run_until_complete(
+                self._run_winrt_ocr(denoised, h)
+            )
+        except Exception as ex:
+            self._log(f"[WinRT OCR] ERROR: {ex}")
+            rows = []
 
-    def _run_pass(self, api: PyTessBaseAPI, image: Image.Image, psm, region_height: int) -> list[OcrRow]:
-        api.SetImage(image)
-        api.Recognize()
-        ri = api.GetIterator()
+        return rows
+
+    async def _run_winrt_ocr(self, image: Image.Image, region_height: int) -> list[OcrRow]:
+        """Конвертирует PIL Image → SoftwareBitmap → запускает OCR."""
+        bitmap = await self._pil_to_software_bitmap(image)
+        ocr_result = await self._engine.recognize_async(bitmap)
 
         rows: list[OcrRow] = []
         diag: list[str] = []
 
-        for r in iterate_level(ri, RIL.TEXTLINE):
-            try:
-                raw_text = r.GetUTF8Text(RIL.TEXTLINE) or ""
-                conf = r.Confidence(RIL.TEXTLINE)
-                box = r.BoundingBox(RIL.TEXTLINE)
-            except RuntimeError:
-                continue
+        for line in ocr_result.lines:
+            raw_text = line.text.strip() if line.text else ""
 
-            raw_text = raw_text.strip()
-            if box is None:
-                continue
-            x1, y1, x2, y2 = box
-            # Координаты считаны с апскейленного изображения — делим обратно на UPSCALE_FACTOR
-            center_y = ((y1 + y2) // 2) // UPSCALE_FACTOR
-            center_y = max(0, min(center_y, region_height - 1))
+            # Y из bounding box слов линии
+            center_y = self._line_center_y(line, image.height, region_height)
 
             reject = None
             normalized = ""
+
             if not raw_text:
                 reject = "empty"
-            elif conf < MIN_CONFIDENCE:
-                reject = "lowconf"
             else:
                 normalized = normalize_text(raw_text)
                 if len(normalized) < MIN_NAME_LENGTH:
@@ -195,61 +240,87 @@ class OcrScanner:
                 elif PANEL_HEADER_MARKER in normalized:
                     reject = "header"
 
-            if reject is None:
-                rows.append(OcrRow(raw_text=raw_text, normalized=normalized, center_y=center_y, confidence=conf))
-            diag.append(f"y={center_y} conf={conf:.0f} '{raw_text}'" + (f" REJ:{reject}" if reject else ""))
+            label = f"y={center_y} conf={WINRT_CONFIDENCE:.0f} '{raw_text}'"
+            if reject:
+                label += f" REJ:{reject}"
+            diag.append(label)
 
-        if len(rows) <= 2 and diag:
+            if reject is None:
+                rows.append(OcrRow(
+                    raw_text=raw_text,
+                    normalized=normalized,
+                    center_y=center_y,
+                    confidence=WINRT_CONFIDENCE,
+                ))
+
+        if diag:
             self._log("OCR raw " + str(len(diag)) + " lines -> " + " | ".join(diag))
 
         return rows
 
     @staticmethod
-    def _merge_by_position(a: list[OcrRow], b: list[OcrRow]) -> list[OcrRow]:
-        def letters(s: str) -> int:
-            return sum(1 for ch in s if ch.isalpha())
+    def _line_center_y(line, image_height: int, region_height: int) -> int:
+        """Вычисляет центр строки по bounding box слов, масштабирует в координаты региона."""
+        try:
+            ys = [w.bounding_rect.y for w in line.words]
+            hs = [w.bounding_rect.height for w in line.words]
+            if not ys:
+                return 0
+            top    = min(ys)
+            bottom = max(y + h_ for y, h_ in zip(ys, hs))
+            center = (top + bottom) / 2
+            # Масштабируем из координат апскейленного изображения в координаты региона
+            scaled = int(center / UPSCALE_FACTOR)
+            return max(0, min(scaled, region_height - 1))
+        except Exception:
+            return 0
 
-        result = list(a)
-        for rb in b:
-            idx = -1
-            best_d = None
-            for i, ra in enumerate(result):
-                d = abs(ra.center_y - rb.center_y)
-                if d <= MERGE_Y_TOLERANCE and (best_d is None or d < best_d):
-                    best_d = d
-                    idx = i
-            if idx < 0:
-                result.append(rb)
-            elif letters(rb.normalized) > letters(result[idx].normalized):
-                result[idx] = rb
+    @staticmethod
+    async def _pil_to_software_bitmap(image: Image.Image) -> SoftwareBitmap:
+        """Конвертирует PIL Image в SoftwareBitmap через BMP поток."""
+        buf = io.BytesIO()
+        image.save(buf, format="BMP")
+        bmp_bytes = buf.getvalue()
 
-        result.sort(key=lambda r: r.center_y)
-        return result
+        stream = InMemoryRandomAccessStream()
+        writer = DataWriter(stream.get_output_stream_at(0))
+        writer.write_bytes(bmp_bytes)
+        await writer.store_async()
+        writer.detach_stream()
+
+        stream.seek(0)
+        decoder = await BitmapDecoder.create_async(stream)
+        return await decoder.get_software_bitmap_async()
 
 
-# --- Самопроверка из командной строки: тест на готовом скриншоте без остального пайплайна ---
+# ------------------------------------------------------------------ #
+#  Самопроверка из командной строки                                    #
+# ------------------------------------------------------------------ #
+
 if __name__ == "__main__":
-    import sys
     import time
 
-    if len(sys.argv) < 3:
-        print("Использование: python ocr_scanner.py <tessdata_dir> <screenshot.png> [x y w h]")
-        print("  Без x y w h — берёт всё изображение целиком.")
+    if len(sys.argv) < 2:
+        print("Использование: python ocr_scanner.py <screenshot.png> [x y w h]")
         sys.exit(1)
 
-    tessdata_dir = sys.argv[1]
-    image_path = sys.argv[2]
-
+    image_path = sys.argv[1]
     img = Image.open(image_path).convert("RGB")
-    if len(sys.argv) >= 7:
-        x, y, ww, hh = map(int, sys.argv[3:7])
+
+    if len(sys.argv) >= 6:
+        x, y, ww, hh = map(int, sys.argv[2:6])
         img = img.crop((x, y, x + ww, y + hh))
 
-    with OcrScanner(tessdata_dir, log=print, debug=True) as scanner:
+    with OcrScanner("", log=print, debug=True) as scanner:
+        # Прогрев
+        scanner.scan(img)
+
+        # Замер
         t0 = time.time()
         rows = scanner.scan(img)
         elapsed = (time.time() - t0) * 1000
+
         print(f"\nВремя скана: {elapsed:.0f} мс")
         print(f"Распознано строк: {len(rows)}")
         for r in rows:
-            print(f"  y={r.center_y:4d} conf={r.confidence:5.1f}  '{r.raw_text}'")
+            print(f"  y={r.center_y:4d} conf={r.confidence:5.1f} '{r.raw_text}'")

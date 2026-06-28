@@ -10,7 +10,6 @@ scan_engine.py
 яркости региона (дешёвая операция) при этом может выполняться чаще — для более
 отзывчивого определения открытия/закрытия панели.
 """
-
 from __future__ import annotations
 
 import threading
@@ -27,17 +26,17 @@ from ru_translator import RuTranslator
 from price_repository import PriceRepository, PriceEntry
 from screen_capture import capture_region
 
+
 # --- Тайминги цикла ---
-MIN_SCAN_INTERVAL_SECONDS = 0.5   # OCR дважды в секунду (было 1.0)
-BRIGHTNESS_POLL_INTERVAL_SECONDS = 0.2  # дешёвая проверка яркости — чаще, для отзывчивости
-HEARTBEAT_EVERY_N_POLLS = 25      # ~раз в 5 секунд при BRIGHTNESS_POLL_INTERVAL_SECONDS=0.2
+MIN_SCAN_INTERVAL_SECONDS = 0.5     # не чаще раза в секунду, см. договорённость по производительности
+BRIGHTNESS_POLL_INTERVAL_SECONDS = 0.2   # дешёвая проверка яркости — чаще, для отзывчивости
+HEARTBEAT_EVERY_N_POLLS = 25         # ~раз в 5 секунд при BRIGHTNESS_POLL_INTERVAL_SECONDS=0.2
 
 # --- Гистерезис яркости (см. ТЗ 8.1 / ListDetector.cs) ---
 OPEN_BRIGHTNESS = 100
 CLOSE_BRIGHTNESS = 80
 BRIGHT_STREAK_TO_OPEN = 2
 DARK_STREAK_TO_CLOSE = 3
-
 LEFT_FRACTION = 0.40
 RIGHT_FRACTION = 0.98
 ROW_FRACTIONS = (0.20, 0.35, 0.50, 0.65, 0.80)
@@ -45,13 +44,8 @@ SAMPLE_COLS = 12
 
 # --- Анти-дребезг блокировки строк (см. ТЗ 8.2 / RowSlot в C#) ---
 MERGE_Y_TOLERANCE = 20
-CONFIRM_READS_FOR_FUZZY = 2   # нечёткие совпадения подтверждаются 2 одинаковыми чтениями подряд
-EVICT_AFTER_MISSES = 1        # мгновенная эвикция после 1 пропуска (было 3)
-
-# --- Обнаружение смены панели (портировано из C# ScanEngine.MergeReads) ---
-# Если столько заблокированных строк одновременно читают ДРУГОЙ предмет —
-# считаем что содержимое панели сменилось и сбрасываем все слоты немедленно.
-PANEL_SWITCH_THRESHOLD = 2
+CONFIRM_READS_FOR_FUZZY = 2     # нечёткие совпадения подтверждаются 2 одинаковыми чтениями подряд
+EVICT_AFTER_MISSES = 1            # слот удаляется после стольких пропусков подряд
 
 # --- Поиск цены по переведённому EN-имени (см. ТЗ 6.5) ---
 PRICE_FUZZY_THRESHOLD = 0.84
@@ -65,7 +59,7 @@ NOT_FOUND_MARKER = "—"
 class PriceRow:
     center_y: int
     ocr_text: str
-    name: str        # переведённое EN-имя (ключ) либо NOT_FOUND_MARKER
+    name: str               # переведённое EN-имя (ключ) либо NOT_FOUND_MARKER
     multiplier: int
     has_price: bool
     divine_value: float = 0.0
@@ -82,6 +76,7 @@ def _sample_brightness(image: Image.Image) -> int:
     x1 = int(w * RIGHT_FRACTION)
     span = max(1, x1 - x0)
     px = image.load()
+
     total = 0
     count = 0
     for yf in ROW_FRACTIONS:
@@ -97,7 +92,6 @@ def _sample_brightness(image: Image.Image) -> int:
 def _resolve_price(en_name: str, prices: dict[str, PriceEntry]) -> tuple[PriceEntry | None, bool]:
     """
     Поиск цены: точное -> префиксное -> нечёткое.
-
     КРИТИЧНО: для любого имени, содержащего "level" (самоцветы, Thaumaturgic Flux
     и т.п.) — ТОЛЬКО точное совпадение, без fallback'ов. Соседние уровни могут
     отличаться в цене в разы при разнице в названии в 1 символ (см. ТЗ 6.5).
@@ -145,7 +139,6 @@ class _RowSlot:
 class ScanEngine:
     """
     Главный цикл сканирования. Запускается в отдельном потоке через start().
-
     on_state(rows, confirmed, reading) вызывается при каждом обновлении состояния
     оверлея — подключить отрисовку оверлея через этот callback.
     """
@@ -157,7 +150,7 @@ class ScanEngine:
         json_path: str,
         price_repo: PriceRepository,
         log_path: str = "scan_log.txt",
-        on_state=None,   # callback(rows: list[PriceRow], confirmed: bool, reading: bool)
+        on_state=None,            # callback(rows: list[PriceRow], confirmed: bool, reading: bool)
         debug: bool = False,
     ):
         self._region = region
@@ -234,7 +227,6 @@ class ScanEngine:
                 try:
                     region_img = capture_region(x, y, w, h)
                     brightness = _sample_brightness(region_img)
-
                     bright_frame = brightness > OPEN_BRIGHTNESS
                     dark_frame = brightness < CLOSE_BRIGHTNESS
 
@@ -288,7 +280,6 @@ class ScanEngine:
                     self._log(f"ERROR {type(ex).__name__}: {ex}")
 
                 self._stop_event.wait(BRIGHTNESS_POLL_INTERVAL_SECONDS)
-
         finally:
             scanner.close()
             self._on_state([], False, False)
@@ -304,6 +295,7 @@ class ScanEngine:
             self._log(f"OCR: raw='{row.raw_text}' y={row.center_y} conf={row.confidence:.0f}")
 
             en_name, multiplier = translator.try_translate(row.raw_text)
+
             if en_name is None:
                 result.append(PriceRow(
                     center_y=row.center_y, ocr_text=row.raw_text, name=NOT_FOUND_MARKER,
@@ -333,27 +325,6 @@ class ScanEngine:
     # --- Блокировка строк по позиции (анти-дребезг, см. ТЗ 8.2) ---
 
     def _merge_rows(self, slots: dict[int, _RowSlot], reads: list[PriceRow]) -> None:
-        # ── Обнаружение смены панели (портировано из C# ScanEngine.MergeReads) ──
-        # Пользователь может переключиться на другую панель без закрытия оверлея.
-        # Заблокированные строки в этом случае «прилипают» и показывают старые цены.
-        # Если 2+ заблокированных слота одновременно читают ДРУГОЙ предмет —
-        # содержимое панели сменилось: сбрасываем все слоты немедленно.
-        changed_positions = 0
-        for read in reads:
-            if not read.has_price:
-                continue
-            for sy, s in slots.items():
-                if s.locked and s.locked_row is not None:
-                    if abs(sy - read.center_y) <= MERGE_Y_TOLERANCE:
-                        if s.locked_row.name != read.name:
-                            changed_positions += 1
-                        break
-
-        if changed_positions >= PANEL_SWITCH_THRESHOLD:
-            self._log(f"panel switch detected ({changed_positions} rows changed) — resetting slots")
-            slots.clear()
-
-        # ── Стандартная логика слотов ──
         matched_ys: set[int] = set()
 
         for read in reads:
@@ -389,7 +360,7 @@ class ScanEngine:
                     slot.locked = True
                     slot.locked_row = read
             else:
-                # Если цена не найдена, сбрасываем блокировку,
+                # Если цена не найдена, сбрасываем блокировку, 
                 # чтобы отобразился маркер отсутствия цены (или иконка)
                 slot.locked = False
                 slot.locked_row = None
