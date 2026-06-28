@@ -28,7 +28,7 @@ from price_repository import PriceRepository, PriceEntry
 from screen_capture import capture_region
 
 # --- Тайминги цикла ---
-MIN_SCAN_INTERVAL_SECONDS = 0.5   # OCR дважды в секунду (было 1.0)
+MIN_SCAN_INTERVAL_SECONDS = 0.2   # OCR дважды в секунду (было 1.0)
 BRIGHTNESS_POLL_INTERVAL_SECONDS = 0.2  # дешёвая проверка яркости — чаще, для отзывчивости
 HEARTBEAT_EVERY_N_POLLS = 25      # ~раз в 5 секунд при BRIGHTNESS_POLL_INTERVAL_SECONDS=0.2
 

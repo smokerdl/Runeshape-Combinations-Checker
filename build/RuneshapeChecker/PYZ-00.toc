@@ -1992,6 +1992,10 @@
   ('typing',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\typing.py',
    'PYMODULE'),
+  ('typing_extensions',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\typing_extensions.py',
+   'PYMODULE'),
   ('unittest',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\unittest\\__init__.py',
    'PYMODULE'),
@@ -2184,8 +2188,52 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\urllib3\\util\\wait.py',
    'PYMODULE'),
+  ('uuid',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\uuid.py',
+   'PYMODULE'),
   ('webbrowser',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\webbrowser.py',
+   'PYMODULE'),
+  ('winrt', '-', 'PYMODULE'),
+  ('winrt.runtime',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\runtime\\__init__.py',
+   'PYMODULE'),
+  ('winrt.runtime._internals',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\runtime\\_internals.py',
+   'PYMODULE'),
+  ('winrt.system',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\system\\__init__.py',
+   'PYMODULE'),
+  ('winrt.windows', '-', 'PYMODULE'),
+  ('winrt.windows.foundation',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\windows\\foundation\\__init__.py',
+   'PYMODULE'),
+  ('winrt.windows.foundation.collections',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\windows\\foundation\\collections\\__init__.py',
+   'PYMODULE'),
+  ('winrt.windows.globalization',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\windows\\globalization\\__init__.py',
+   'PYMODULE'),
+  ('winrt.windows.graphics', '-', 'PYMODULE'),
+  ('winrt.windows.graphics.imaging',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\windows\\graphics\\imaging\\__init__.py',
+   'PYMODULE'),
+  ('winrt.windows.media', '-', 'PYMODULE'),
+  ('winrt.windows.media.ocr',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\windows\\media\\ocr\\__init__.py',
+   'PYMODULE'),
+  ('winrt.windows.storage', '-', 'PYMODULE'),
+  ('winrt.windows.storage.streams',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\windows\\storage\\streams\\__init__.py',
    'PYMODULE'),
   ('xml',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\xml\\__init__.py',

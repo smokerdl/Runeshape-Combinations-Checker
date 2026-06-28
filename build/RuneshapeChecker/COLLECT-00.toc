@@ -644,6 +644,9 @@
   ('_ssl.pyd',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_ssl.pyd',
    'EXTENSION'),
+  ('_uuid.pyd',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_uuid.pyd',
+   'EXTENSION'),
   ('base_library.zip',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\build\\RuneshapeChecker\\base_library.zip',
@@ -1007,4 +1010,36 @@
    'EXTENSION'),
   ('unicodedata.pyd',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('winrt\\MSVCP140.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\MSVCP140.dll',
+   'BINARY'),
+  ('winrt\\_winrt.cp311-win_amd64.pyd',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\_winrt.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('winrt\\_winrt_windows_foundation.cp311-win_amd64.pyd',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\_winrt_windows_foundation.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('winrt\\_winrt_windows_foundation_collections.cp311-win_amd64.pyd',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\_winrt_windows_foundation_collections.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('winrt\\_winrt_windows_globalization.cp311-win_amd64.pyd',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\_winrt_windows_globalization.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('winrt\\_winrt_windows_graphics_imaging.cp311-win_amd64.pyd',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\_winrt_windows_graphics_imaging.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('winrt\\_winrt_windows_media_ocr.cp311-win_amd64.pyd',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\_winrt_windows_media_ocr.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('winrt\\_winrt_windows_storage_streams.cp311-win_amd64.pyd',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\winrt\\_winrt_windows_storage_streams.cp311-win_amd64.pyd',
    'EXTENSION')],)
