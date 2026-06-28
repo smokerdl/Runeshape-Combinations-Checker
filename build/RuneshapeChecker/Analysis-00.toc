@@ -2146,11 +2146,11 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\settings_window.py',
    'PYMODULE'),
-  ('stringprep',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
-   'PYMODULE'),
   ('tracemalloc',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stringprep.py',
    'PYMODULE'),
   ('_py_abc',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_py_abc.py',
@@ -2552,13 +2552,13 @@
   ('python311.dll',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\python311.dll',
    'BINARY'),
-  ('numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll',
-   'BINARY'),
   ('numpy.libs\\libscipy_openblas64_-63c857e738469261263c764a36be9436.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-63c857e738469261263c764a36be9436.dll',
+   'BINARY'),
+  ('numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy.libs\\msvcp140-a4c2229bdc2a2a630acdc095b4d86008.dll',
    'BINARY'),
   ('PySide6\\plugins\\styles\\qmodernwindowsstyle.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
@@ -2568,73 +2568,61 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\opengl32sw.dll',
    'BINARY'),
-  ('PySide6\\plugins\\tls\\qschannelbackend.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qschannelbackend.dll',
-   'BINARY'),
   ('PySide6\\plugins\\tls\\qopensslbackend.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qopensslbackend.dll',
-   'BINARY'),
-  ('PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
    'BINARY'),
   ('PySide6\\plugins\\tls\\qcertonlybackend.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qcertonlybackend.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qtga.dll',
+  ('PySide6\\plugins\\tls\\qschannelbackend.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qtga.dll',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\tls\\qschannelbackend.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qico.dll',
+  ('PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qico.dll',
-   'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qwebp.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwebp.dll',
-   'BINARY'),
-  ('PySide6\\plugins\\platforms\\qdirect2d.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qdirect2d.dll',
-   'BINARY'),
-  ('PySide6\\plugins\\platforms\\qminimal.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qminimal.dll',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\networkinformation\\qnetworklistmanager.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qjpeg.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qjpeg.dll',
    'BINARY'),
-  ('PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
+  ('PySide6\\plugins\\imageformats\\qgif.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
-   'BINARY'),
-  ('PySide6\\plugins\\iconengines\\qsvgicon.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\iconengines\\qsvgicon.dll',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qgif.dll',
    'BINARY'),
   ('PySide6\\plugins\\imageformats\\qicns.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qicns.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qwbmp.dll',
+  ('PySide6\\plugins\\imageformats\\qpdf.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwbmp.dll',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qpdf.dll',
    'BINARY'),
   ('PySide6\\plugins\\generic\\qtuiotouchplugin.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\generic\\qtuiotouchplugin.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qgif.dll',
+  ('PySide6\\plugins\\platforms\\qwindows.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qgif.dll',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qwindows.dll',
    'BINARY'),
-  ('PySide6\\plugins\\imageformats\\qpdf.dll',
+  ('PySide6\\plugins\\imageformats\\qico.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qpdf.dll',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qico.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\iconengines\\qsvgicon.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\iconengines\\qsvgicon.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\imageformats\\qtga.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qtga.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforminputcontexts\\qtvirtualkeyboardplugin.dll',
    'BINARY'),
   ('PySide6\\plugins\\platforms\\qoffscreen.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
@@ -2644,13 +2632,25 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qsvg.dll',
    'BINARY'),
+  ('PySide6\\plugins\\imageformats\\qwbmp.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwbmp.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\imageformats\\qwebp.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qwebp.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\platforms\\qminimal.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qminimal.dll',
+   'BINARY'),
+  ('PySide6\\plugins\\platforms\\qdirect2d.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qdirect2d.dll',
+   'BINARY'),
   ('PySide6\\plugins\\imageformats\\qtiff.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\imageformats\\qtiff.dll',
-   'BINARY'),
-  ('PySide6\\plugins\\platforms\\qwindows.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\plugins\\platforms\\qwindows.dll',
    'BINARY'),
   ('_decimal.pyd',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\_decimal.pyd',
@@ -2902,17 +2902,17 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6Network.dll',
    'BINARY'),
-  ('PySide6\\Qt6VirtualKeyboard.dll',
+  ('PySide6\\Qt6Pdf.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6VirtualKeyboard.dll',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6Pdf.dll',
    'BINARY'),
   ('PySide6\\Qt6Svg.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6Svg.dll',
    'BINARY'),
-  ('PySide6\\Qt6Pdf.dll',
+  ('PySide6\\Qt6VirtualKeyboard.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6Pdf.dll',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6VirtualKeyboard.dll',
    'BINARY'),
   ('libcrypto-3.dll',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\DLLs\\libcrypto-3.dll',
@@ -2930,10 +2930,6 @@
   ('python3.dll',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\python3.dll',
    'BINARY'),
-  ('PySide6\\MSVCP140.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\MSVCP140.dll',
-   'BINARY'),
   ('PySide6\\pyside6.abi3.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\pyside6.abi3.dll',
@@ -2942,21 +2938,25 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\VCRUNTIME140_1.dll',
    'BINARY'),
-  ('shiboken6\\shiboken6.abi3.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\shiboken6\\shiboken6.abi3.dll',
-   'BINARY'),
   ('PySide6\\VCRUNTIME140.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\VCRUNTIME140.dll',
    'BINARY'),
-  ('shiboken6\\VCRUNTIME140_1.dll',
+  ('shiboken6\\shiboken6.abi3.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\shiboken6\\VCRUNTIME140_1.dll',
+   'Checker\\.venv\\Lib\\site-packages\\shiboken6\\shiboken6.abi3.dll',
+   'BINARY'),
+  ('PySide6\\MSVCP140.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\MSVCP140.dll',
    'BINARY'),
   ('shiboken6\\VCRUNTIME140.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\shiboken6\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('shiboken6\\VCRUNTIME140_1.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\shiboken6\\VCRUNTIME140_1.dll',
    'BINARY'),
   ('PySide6\\MSVCP140_2.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
@@ -2974,10 +2974,6 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6Qml.dll',
    'BINARY'),
-  ('PySide6\\Qt6QmlModels.dll',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlModels.dll',
-   'BINARY'),
   ('PySide6\\Qt6QmlMeta.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlMeta.dll',
@@ -2985,6 +2981,10 @@
   ('PySide6\\Qt6OpenGL.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6OpenGL.dll',
+   'BINARY'),
+  ('PySide6\\Qt6QmlModels.dll',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\Qt6QmlModels.dll',
    'BINARY'),
   ('PySide6\\Qt6QmlWorkerScript.dll',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
@@ -3068,473 +3068,401 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\certifi\\py.typed',
    'DATA'),
-  ('PySide6\\translations\\qt_help_ka.qm',
+  ('PySide6\\translations\\qt_help_zh_TW.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ka.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_en.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_en.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_de.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_de.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_fr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_it.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_it.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_ko.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ko.qm',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_TW.qm',
    'DATA'),
   ('PySide6\\translations\\qtbase_ja.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ja.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_gl.qm',
+  ('PySide6\\translations\\qt_help_hu.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_gl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_de.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_de.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_fi.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fi.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_pl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_sv.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sv.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ca.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ca.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_sl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_sk.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_it.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_it.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_lg.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lg.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_bg.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_bg.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ja.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ja.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_hu.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hu.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_pt_BR.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_BR.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_fr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_fr.qm',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hu.qm',
    'DATA'),
   ('PySide6\\translations\\qt_gd.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_gd.qm',
    'DATA'),
-  ('PySide6\\translations\\qt_help_ko.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ko.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_hr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_nl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_pt_PT.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_PT.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_uk.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_uk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_gl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_gl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_uk.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_uk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_zh_TW.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_TW.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_da.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_da.qm',
-   'DATA'),
   ('PySide6\\translations\\qt_zh_TW.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_TW.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_ru.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ru.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_da.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_da.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_pl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_pt_BR.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pt_BR.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ko.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ko.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_nl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_zh_CN.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_CN.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_tr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_tr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_fi.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fi.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_pl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_hr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_he.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_he.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_hu.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hu.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_nl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_ca.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ca.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_cs.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_cs.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_lv.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lv.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_it.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_it.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_de.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_de.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_sv.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_sv.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ar.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ar.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_fa.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fa.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ja.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ja.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_lg.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lg.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_lv.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lv.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_es.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_es.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_es.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_es.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_nn.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nn.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ru.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ru.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_sl.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sl.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_nn.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nn.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_lt.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lt.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_he.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_he.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_hr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_pt_BR.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pt_BR.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_ka.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ka.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_cs.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_cs.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_tr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_tr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_en.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_en.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_gd.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_gd.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_fr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_cs.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_cs.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_fa.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fa.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ka.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ka.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_zh_TW.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_TW.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_ca.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ca.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_bg.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_bg.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_nn.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nn.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_sk.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ru.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ru.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_sv.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sv.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_uk.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_uk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_zh_CN.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_CN.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_ar.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ar.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_da.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_da.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_zh_CN.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_CN.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_sk.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_sk.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_ar.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ar.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_hu.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hu.qm',
-   'DATA'),
-  ('PySide6\\translations\\qt_help_tr.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_tr.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_en.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_en.qm',
-   'DATA'),
-  ('PySide6\\translations\\qtbase_bg.qm',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_bg.qm',
    'DATA'),
   ('PySide6\\translations\\qt_help_es.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_es.qm',
    'DATA'),
-  ('numpy-2.4.6.dist-info\\entry_points.txt',
+  ('PySide6\\translations\\qt_help_sv.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\entry_points.txt',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sv.qm',
    'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\LICENSE.md',
+  ('PySide6\\translations\\qt_he.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\LICENSE.md',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_he.qm',
    'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\umath\\svml\\LICENSE',
+  ('PySide6\\translations\\qtbase_lv.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\umath\\svml\\LICENSE',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lv.qm',
    'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\pcg64\\LICENSE.md',
+  ('PySide6\\translations\\qtbase_nl.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\pcg64\\LICENSE.md',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nl.qm',
    'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\mt19937\\LICENSE.md',
+  ('PySide6\\translations\\qt_help_sk.qm',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\mt19937\\LICENSE.md',
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_de.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_de.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sk.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_uk.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ru.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ru.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_fi.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fi.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ar.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_nn.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_gl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_gl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ko.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ko.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_hu.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hu.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_bg.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_hr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_zh_CN.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_CN.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_he.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_he.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_pl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_fr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ar.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_nl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_tr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_tr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_lv.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pt_PT.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_PT.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_hu.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_hu.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_cs.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_uk.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_fi.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fi.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_lt.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lt.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_it.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_it.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_lg.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_lg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_en.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_en.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_sk.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_sk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_tr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_tr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_bg.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_cs.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_es.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_es.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_hr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_pt_BR.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ca.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ca.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_de.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_de.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_lg.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_lg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_en.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_en.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_nn.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ja.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ja.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_nl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_nl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_sl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_sl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_fa.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fa.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ru.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ru.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_zh_CN.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_zh_CN.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ka.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ka.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_es.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_es.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_fr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_fr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_zh_TW.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_zh_TW.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_pt_BR.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_hr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_hr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_sv.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_sv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_ko.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_ko.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ca.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ca.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_pt_BR.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_pt_BR.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ca.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ca.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_da.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_da.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ko.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ko.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_cs.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_cs.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_pl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_pl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_bg.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_bg.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_uk.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_uk.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_fa.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_fa.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ar.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ar.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_ja.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_ja.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_gd.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_gd.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_nn.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_nn.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_gl.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_gl.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_zh_CN.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_zh_CN.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_fr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_fr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_en.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_en.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ka.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ka.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_da.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_da.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_ru.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_ru.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_da.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_da.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_sv.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_sv.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_it.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_it.qm',
+   'DATA'),
+  ('PySide6\\translations\\qtbase_tr.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qtbase_tr.qm',
+   'DATA'),
+  ('PySide6\\translations\\qt_help_de.qm',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\PySide6\\translations\\qt_help_de.qm',
    'DATA'),
   ('numpy-2.4.6.dist-info\\INSTALLER',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\INSTALLER',
    'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\splitmix64\\LICENSE.md',
+  ('numpy-2.4.6.dist-info\\entry_points.txt',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\splitmix64\\LICENSE.md',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\include\\numpy\\libdivide\\LICENSE.txt',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\include\\numpy\\libdivide\\LICENSE.txt',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\npysort\\x86-simd-sort\\LICENSE.md',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\npysort\\x86-simd-sort\\LICENSE.md',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\philox\\LICENSE.md',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\philox\\LICENSE.md',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\distributions\\LICENSE.md',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\distributions\\LICENSE.md',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\RECORD',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\RECORD',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\LICENSE.txt',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\LICENSE.txt',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\sfc64\\LICENSE.md',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\sfc64\\LICENSE.md',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\multiarray\\dragon4_LICENSE.txt',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\multiarray\\dragon4_LICENSE.txt',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\common\\pythoncapi-compat\\COPYING',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\common\\pythoncapi-compat\\COPYING',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\fft\\pocketfft\\LICENSE.md',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\fft\\pocketfft\\LICENSE.md',
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\entry_points.txt',
    'DATA'),
   ('numpy-2.4.6.dist-info\\METADATA',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\METADATA',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\WHEEL',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\WHEEL',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\linalg\\lapack_lite\\LICENSE.txt',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\linalg\\lapack_lite\\LICENSE.txt',
-   'DATA'),
-  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\highway\\LICENSE',
-   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
-   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\highway\\LICENSE',
    'DATA'),
   ('numpy-2.4.6.dist-info\\DELVEWHEEL',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
@@ -3544,27 +3472,150 @@
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\ma\\LICENSE',
    'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\npysort\\x86-simd-sort\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\npysort\\x86-simd-sort\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\fft\\pocketfft\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\fft\\pocketfft\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\pcg64\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\pcg64\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\multiarray\\dragon4_LICENSE.txt',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\multiarray\\dragon4_LICENSE.txt',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\linalg\\lapack_lite\\LICENSE.txt',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\linalg\\lapack_lite\\LICENSE.txt',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\splitmix64\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\splitmix64\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\mt19937\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\mt19937\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\common\\pythoncapi-compat\\COPYING',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\common\\pythoncapi-compat\\COPYING',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\RECORD',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\RECORD',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\WHEEL',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\WHEEL',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\umath\\svml\\LICENSE',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\umath\\svml\\LICENSE',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\distributions\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\distributions\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\include\\numpy\\libdivide\\LICENSE.txt',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\include\\numpy\\libdivide\\LICENSE.txt',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\LICENSE.txt',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\philox\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\philox\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\sfc64\\LICENSE.md',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\random\\src\\sfc64\\LICENSE.md',
+   'DATA'),
+  ('numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\highway\\LICENSE',
+   'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
+   'Checker\\.venv\\Lib\\site-packages\\numpy-2.4.6.dist-info\\licenses\\numpy\\_core\\src\\highway\\LICENSE',
+   'DATA'),
   ('base_library.zip',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\build\\RuneshapeChecker\\base_library.zip',
    'DATA')],
- [('reprlib',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\reprlib.py',
+ [('warnings',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\warnings.py',
+   'PYMODULE'),
+  ('stat',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stat.py',
    'PYMODULE'),
   ('sre_constants',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sre_constants.py',
    'PYMODULE'),
+  ('functools',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\functools.py',
+   'PYMODULE'),
+  ('heapq',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\heapq.py',
+   'PYMODULE'),
+  ('io',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\io.py',
+   'PYMODULE'),
+  ('traceback',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\traceback.py',
+   'PYMODULE'),
+  ('re._parser',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\_parser.py',
+   'PYMODULE'),
+  ('re._constants',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\_constants.py',
+   'PYMODULE'),
+  ('re._compiler',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\_compiler.py',
+   'PYMODULE'),
+  ('re._casefix',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\_casefix.py',
+   'PYMODULE'),
+  ('re',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\__init__.py',
+   'PYMODULE'),
   ('locale',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\locale.py',
+   'PYMODULE'),
+  ('weakref',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\weakref.py',
+   'PYMODULE'),
+  ('operator',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\operator.py',
+   'PYMODULE'),
+  ('genericpath',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\genericpath.py',
    'PYMODULE'),
   ('codecs',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\codecs.py',
    'PYMODULE'),
-  ('posixpath',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\posixpath.py',
+  ('types',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\types.py',
    'PYMODULE'),
-  ('sre_parse',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sre_parse.py',
+  ('copyreg',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\copyreg.py',
+   'PYMODULE'),
+  ('_weakrefset',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_weakrefset.py',
+   'PYMODULE'),
+  ('enum',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\enum.py',
+   'PYMODULE'),
+  ('sre_compile',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sre_compile.py',
+   'PYMODULE'),
+  ('keyword',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\keyword.py',
    'PYMODULE'),
   ('encodings.zlib_codec',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\encodings\\zlib_codec.py',
@@ -3932,83 +3983,32 @@
   ('encodings',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\encodings\\__init__.py',
    'PYMODULE'),
-  ('io',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\io.py',
-   'PYMODULE'),
-  ('heapq',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\heapq.py',
-   'PYMODULE'),
-  ('_collections_abc',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_collections_abc.py',
-   'PYMODULE'),
   ('collections.abc',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\collections\\abc.py',
    'PYMODULE'),
   ('collections',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\collections\\__init__.py',
    'PYMODULE'),
-  ('weakref',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\weakref.py',
-   'PYMODULE'),
-  ('sre_compile',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sre_compile.py',
-   'PYMODULE'),
-  ('operator',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\operator.py',
-   'PYMODULE'),
-  ('linecache',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\linecache.py',
-   'PYMODULE'),
-  ('warnings',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\warnings.py',
-   'PYMODULE'),
-  ('re._parser',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\_parser.py',
-   'PYMODULE'),
-  ('re._constants',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\_constants.py',
-   'PYMODULE'),
-  ('re._compiler',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\_compiler.py',
-   'PYMODULE'),
-  ('re._casefix',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\_casefix.py',
-   'PYMODULE'),
-  ('re',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\re\\__init__.py',
-   'PYMODULE'),
-  ('types',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\types.py',
-   'PYMODULE'),
-  ('functools',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\functools.py',
-   'PYMODULE'),
-  ('genericpath',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\genericpath.py',
-   'PYMODULE'),
-  ('stat',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\stat.py',
-   'PYMODULE'),
-  ('ntpath',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ntpath.py',
-   'PYMODULE'),
-  ('keyword',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\keyword.py',
+  ('posixpath',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\posixpath.py',
    'PYMODULE'),
   ('abc',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\abc.py',
    'PYMODULE'),
-  ('enum',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\enum.py',
+  ('linecache',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\linecache.py',
    'PYMODULE'),
-  ('_weakrefset',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_weakrefset.py',
+  ('_collections_abc',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\_collections_abc.py',
    'PYMODULE'),
-  ('copyreg',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\copyreg.py',
+  ('sre_parse',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\sre_parse.py',
    'PYMODULE'),
-  ('traceback',
-   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\traceback.py',
+  ('ntpath',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\ntpath.py',
+   'PYMODULE'),
+  ('reprlib',
+   'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\reprlib.py',
    'PYMODULE'),
   ('os',
    'C:\\Users\\smk79\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\os.py',

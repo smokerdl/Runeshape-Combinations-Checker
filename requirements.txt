@@ -1,10 +1,27 @@
+# Runeshape Combinations Checker — зависимости
+# Установка: pip install -r requirements.txt
+
+# GUI и оверлей
 PySide6
+
+# Глобальные хоткеи
 pynput
+
+# Обработка изображений (препроцессинг перед OCR, захват экрана)
 Pillow
+
+# Нечёткий поиск (Levenshtein) для RU→EN перевода
 rapidfuzz
+
+# HTTP-запросы к API poe.ninja
 requests
+
+# Захват экрана
 mss
-tesserocr
+
+# Windows OCR (Windows.Media.Ocr — встроенный Windows API, заменяет tesserocr)
+# Требует Windows 10 v1803+ и установленного языкового пакета RU:
+#   Settings → Time & Language → Language & region → Add a language → Русский
 winrt-Windows.Media.Ocr
 winrt-Windows.Graphics.Imaging
 winrt-Windows.Storage.Streams

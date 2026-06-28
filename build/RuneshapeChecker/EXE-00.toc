@@ -85,7 +85,7 @@
  [],
  False,
  False,
- 1782629065,
+ 1782660854,
  [('runw.exe',
    'C:\\Users\\smk79\\Documents\\Скрипты Pythons\\Runeshape Combinations '
    'Checker\\.venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\runw.exe',

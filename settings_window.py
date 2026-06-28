@@ -595,7 +595,10 @@ class MainWindow(QWidget):
             except Exception:
                 pass
         key = self._config.start_stop_hotkey
-        key_combo = f"<{key}>"
+        # Одиночный символ (буква/цифра) — без угловых скобок.
+        # Спецклавиши (f5, ctrl, shift, ...) — в угловых скобках <key>.
+        # pynput НЕ принимает <a> — только <f5>, <ctrl> и т.п.
+        key_combo = key if len(key) == 1 else f"<{key}>"
         try:
             self._hotkey_listener = kb.GlobalHotKeys({
                 key_combo: lambda: self._bridge.hotkey_pressed.emit()
@@ -620,12 +623,25 @@ class MainWindow(QWidget):
             except Exception:
                 pass
 
+        # VK-коды для букв A-Z (65-90) и цифр 0-9 (48-57) — независимы от раскладки
+        _VK_ALPHA = {vk: chr(vk).lower() for vk in range(65, 91)}   # a-z
+        _VK_DIGIT = {vk: chr(vk)        for vk in range(48, 58)}    # 0-9
+        _VK_TO_EN = {**_VK_ALPHA, **_VK_DIGIT}
+
         def on_press(key):
             try:
-                if hasattr(key, 'char') and key.char:
+                vk = getattr(key, 'vk', None)
+                if vk is not None and vk in _VK_TO_EN:
+                    # Буква или цифра: берём английский эквивалент по VK-коду,
+                    # игнорируя текущую раскладку клавиатуры
+                    key_name = _VK_TO_EN[vk]
+                elif hasattr(key, 'name') and key.name:
+                    # Спецклавиши: f5, ctrl, shift, home, ...
+                    key_name = key.name.lower()
+                elif hasattr(key, 'char') and key.char and key.char.isprintable():
                     key_name = key.char.lower()
                 else:
-                    key_name = key.name.lower()
+                    key_name = str(key).replace("Key.", "").lower()
             except Exception:
                 key_name = str(key).replace("Key.", "").lower()
 
