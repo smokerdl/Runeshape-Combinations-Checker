@@ -1,15 +1,37 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_all
 
-datas = [('icons', 'icons'), ('Runeshape_Combinations.json', '.'), ('tessdata', 'tessdata')]
+# The current OCR backend uses Windows.Media.Ocr / WinRT, so tesserocr is
+# no longer a runtime dependency and must not be collected here.
+
+datas = [
+    ('icons', 'icons'),
+    ('Runeshape_Combinations.json', '.'),
+    ('tessdata', 'tessdata'),
+]
 binaries = []
-hiddenimports = ['settings_window', 'overlay', 'scan_engine', 'ocr_scanner', 'ru_translator', 'price_repository', 'screen_capture', 'calibration', 'config', 'pynput.keyboard._win32', 'pynput.mouse._win32', 'mss.windows', 'rapidfuzz.distance.Levenshtein']
-tmp_ret = collect_all('tesserocr')
-datas += tmp_ret[0]; binaries += tmp_ret[1]; hiddenimports += tmp_ret[2]
+hiddenimports = [
+    'settings_window',
+    'overlay',
+    'scan_engine',
+    'ocr_scanner',
+    'ru_translator',
+    'price_repository',
+    'screen_capture',
+    'calibration',
+    'config',
+    'pynput.keyboard._win32',
+    'pynput.mouse._win32',
+    'mss.windows',
+    'rapidfuzz.distance.Levenshtein',
+    'winrt.windows.media.ocr',
+    'winrt.windows.globalization',
+    'winrt.windows.graphics.imaging',
+    'winrt.windows.storage.streams',
+]
 
 
 a = Analysis(
-    ['settings_window.py'],
+    ['main.py'],
     pathex=[],
     binaries=binaries,
     datas=datas,
