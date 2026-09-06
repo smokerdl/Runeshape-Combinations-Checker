@@ -1,0 +1,50 @@
+name: Build Windows executable
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        shell: powershell
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install pyinstaller
+
+      - name: Build with PyInstaller
+        shell: powershell
+        run: python -m PyInstaller --clean --noconfirm RuneshapeChecker.spec
+
+      - name: Verify build output
+        shell: powershell
+        run: |
+          if (-not (Test-Path 'dist\RuneshapeChecker\RuneshapeChecker.exe')) {
+            throw 'Build failed: RuneshapeChecker.exe was not created.'
+          }
+          Get-ChildItem 'dist\RuneshapeChecker' -Recurse | Select-Object FullName, Length
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: RuneshapeChecker-Windows
+          path: dist/RuneshapeChecker/
+          if-no-files-found: error
+          retention-days: 14
