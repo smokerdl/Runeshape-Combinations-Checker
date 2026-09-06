@@ -20,6 +20,8 @@ from urllib.parse import quote
 
 import requests
 
+from config import LEAGUE_IDS_BY_NAME
+
 
 # --- Категории запросов к poe.ninja (см. ТЗ 7.2) ---
 EXCHANGE_TYPES = ["Verisium", "Runes", "Expedition", "Currency", "UncutGems"]
@@ -155,10 +157,14 @@ class PriceRepository:
                 self._log(f"[PriceRepository] ошибка в callback PricesUpdated: {ex}")
 
     def _fetch_type(self, league_name: str, exchange_type: str) -> dict[str, PriceEntry]:
-        league_slug = league_name.replace(" ", "").lower()
+        # В UI используется человекочитаемое имя, а API получает league id.
+        # На текущем API они часто совпадают, но разделение здесь защищает нас
+        # от изменений формата poe.ninja.
+        league_id = LEAGUE_IDS_BY_NAME.get(league_name, league_name)
+        league_slug = quote(league_id.lower(), safe="")
         type_slug = exchange_type.lower()
 
-        params = {"league": league_name, "type": exchange_type}
+        params = {"league": league_id, "type": exchange_type}
         headers = {
             "User-Agent": _USER_AGENT,
             "Referer": f"https://poe.ninja/poe2/economy/{league_slug}/{type_slug}",
