@@ -25,19 +25,34 @@ from rapidfuzz import fuzz, process
 # от иконок часто стоит ПЕРЕД префиксом ("› | & Умение: ...").
 _CATEGORY_PREFIX_RE = re.compile(r"(Умение|Поддержка)\s*:\\s*", re.IGNORECASE)
 
-# Множитель количества — число в круглых скобках СТРОГО В КОНЦЕ строки.
-# "Чародейский расплав (Уровень 19) (1)" -> 1 (а не 19 — скобки с "Уровень"
-# не на конце строки, поэтому не матчатся).
-_MULTIPLIER_SUFFIX_RE = re.compile(r"(?<!\w)\((\d{1,3})\)\s*$")
+# В конце строки в скобках может находиться либо множитель, либо часть имени:
+#   "Сфера хаоса (3)"                     -> множитель 3
+#   "Неогранённый камень духа (уровень 19)" -> часть имени, НЕ множитель
+# Сначала находим последний блок круглых скобок, а множителем считаем его
+# только после OCR-нормализации, если внутри остались исключительно цифры.
+_PAREN_SUFFIX_RE = re.compile(r"\(([^()]*)\)\s*$")
 
-# Тот же суффикс "(N)" в конце строки, для срезания перед поиском в словаре.
-_QUANTITY_SUFFIX_RE = re.compile(r"\s*\(\d{1,3}\)\s*$")
+# Типичные ошибки OCR в коротком числовом блоке. Нормализация применяется
+# ТОЛЬКО к содержимому последних круглых скобок, поэтому обычные буквы в названии
+# предмета никогда не затрагиваются.
+_OCR_DIGIT_TRANSLATION = str.maketrans({
+    "О": "0",  # кириллическая О
+    "о": "0",
+    "O": "0",  # латинская O
+    "o": "0",
+    "З": "3",  # кириллическая З
+    "з": "3",
+    "I": "1",
+    "l": "1",
+    "І": "1",  # кириллическая I
+    "і": "1",
+})
 
 # Слово "уровень" в нормализованном тексте — признак того, что для этого
-# названия в базе могут быть СОСЕДНИЕ записи (другие уровни), отличающиеся на
+# названия в базе могут существовать СОСЕДНИЕ записи (другие уровни), отличающиеся на
 # 1 символ. НЕ требуем строгого формата "уровень \d+\b" — если OCR исказил саму
 # цифру до неузнаваемости (например "1я" вместо "19"), это НЕ повод снимать
-# защиту, а ровно наоборот: чем хуже прочиталась цифра, тем выше риск, что
+# защиту, а ровно наоборот: чем хуже прочиталась цифра уровня, тем выше риск, что
 # нечёткий поиск выберет случайный соседний уровень. Поэтому проверяем только
 # наличие самого слова "уровень" — этого достаточно, чтобы отключить шаг 2.
 _LEVEL_WORD = "уровень"
@@ -59,28 +74,48 @@ def normalize(text: str) -> str:
     return s.strip()
 
 
-def extract_multiplier(raw_text: str) -> int:
-    """Извлекает множитель количества из конца строки.
-    "Сфера хаоса (3)"                          -> 3
-    "Чародейский расплав (Уровень 19) (1)"     -> 1
-    "5 шт. случайной валюты"                   -> 1 (нет отдельных скобок в конце)
+def _normalize_ocr_quantity(raw_value: str) -> str:
+    """Исправляет типичные OCR-замены цифр только внутри блока количества."""
+    return raw_value.strip().translate(_OCR_DIGIT_TRANSLATION)
+
+
+def split_quantity_suffix(text: str) -> tuple[str, int]:
     """
-    m = _MULTIPLIER_SUFFIX_RE.search(raw_text.strip())
-    if m:
-        n = int(m.group(1))
-        return min(max(n, 1), 999)
-    return 1
+    Разделяет OCR-строку на имя и множитель.
+
+    Последние круглые скобки считаются множителем ТОЛЬКО если их содержимое
+    после OCR-нормализации состоит исключительно из цифр. Поэтому конструкции
+    вроде "(уровень 19)" остаются частью имени.
+
+    Примеры:
+      "Сфера хаоса (3)" -> ("Сфера хаоса", 3)
+      "Сфера хаоса (З)" -> ("Сфера хаоса", 3)
+      "Сфера хаоса (2)" -> ("Сфера хаоса", 2)
+      "Неогранённый камень духа (уровень 19)" -> (исходная строка, 1)
+    """
+    text = text.strip()
+    match = _PAREN_SUFFIX_RE.search(text)
+    if not match:
+        return text, 1
+
+    normalized_value = _normalize_ocr_quantity(match.group(1))
+
+    # Это не множитель: скобки являются частью имени (например, "уровень 19").
+    if not normalized_value.isdigit():
+        return text, 1
+
+    quantity = int(normalized_value)
+    if quantity < 1 or quantity > 999:
+        return text, 1
+
+    name = text[:match.start()].rstrip()
+    return name, quantity
 
 
 def strip_category_prefix(text: str) -> str:
     """Срезает 'Умение: '/'Поддержка: ' и всё, что было ДО них (мусор OCR от иконок)."""
     m = _CATEGORY_PREFIX_RE.search(text)
     return text[m.end():] if m else text
-
-
-def strip_quantity_suffix(text: str) -> str:
-    """Срезает суффикс '(N)' с конца строки."""
-    return _QUANTITY_SUFFIX_RE.sub("", text.strip()).strip()
 
 
 class RuTranslator:
@@ -105,8 +140,22 @@ class RuTranslator:
         for e in entries:
             ru_key = normalize(e["ru"])
             en_val = normalize(e["en"])
-            if ru_key and en_val:
-                self._dict[ru_key] = en_val
+            if not ru_key or not en_val:
+                continue
+
+            # Сохраняем исходный ключ без изменений.
+            self._dict[ru_key] = en_val
+
+            # Для записей с числовым суффиксом создаём дополнительный canonical
+            # alias без множителя. Это позволяет одинаково обрабатывать OCR-варианты
+            # вроде "(3)" и "(З)", даже если конкретная запись в JSON хранится
+            # только как "(1)", "(2)" и т.п.
+            base_ru, quantity = split_quantity_suffix(e["ru"])
+            if quantity != 1 or normalize(base_ru) != ru_key:
+                base_key = normalize(base_ru)
+                if base_key and base_key not in self._dict:
+                    self._dict[base_key] = en_val
+
         self._log(f"[RuTranslator] загружено {len(self._dict)} записей из {path}")
 
     @property
@@ -119,11 +168,9 @@ class RuTranslator:
         en_normalized_name = None, если совпадение не найдено — вызывающий код
         должен показать "проверь json" вместо цены.
         """
-        multiplier = extract_multiplier(raw_ocr_text)
-
         no_prefix = strip_category_prefix(raw_ocr_text)
-        stripped = strip_quantity_suffix(no_prefix)
-        ru_key = normalize(stripped)
+        name_text, multiplier = split_quantity_suffix(no_prefix)
+        ru_key = normalize(name_text)
 
         if not ru_key:
             return None, multiplier
@@ -143,7 +190,11 @@ class RuTranslator:
             self._log(f"[RuTranslator] ТОЧНО '{raw_ocr_text.strip()}' -> '{en}' x{multiplier}")
             return en, multiplier
 
-        # 2. Нечёткое совпадение — ПРОПУСКАЕТСЯ для строк с номером уровня
+        # 2. Нечёткое совпадение — ПРОПУСКАЕТСЯ для строк с уровнем.
+        # Используем полное отношение строк (ratio), а не partial_ratio: partial
+        # позволяло ошибочно считать "Лёгкий сплав" совпадением "Мистический сплав"
+        # из-за общего фрагмента "сплав". Полное сравнение резко снижает такие
+        # ложные совпадения и при этом сохраняет fuzzy-поиск для обычных OCR-опечаток.
         if not has_level:
             best_key, score = self._best_fuzzy(ru_key)
             if best_key is not None:
@@ -173,25 +224,27 @@ class RuTranslator:
         return None, multiplier
 
     def _best_fuzzy(self, ru_key: str) -> tuple[str | None, float]:
-        """Ищет лучшее частичное совпадение с помощью алгоритмов rapidfuzz."""
-        # Фильтруем кандидатов по длине, сохраняя оригинальное ограничение проекта для безопасности
-        candidates = [key for key in self._dict if abs(len(key) - len(ru_key)) <= FUZZY_MAX_LEN_DIFF]
-        
+        """Ищет лучшее полное совпадение с помощью rapidfuzz."""
+        candidates = [
+            key
+            for key in self._dict
+            if abs(len(key) - len(ru_key)) <= FUZZY_MAX_LEN_DIFF
+        ]
+
         if not candidates:
             return None, 0.0
 
-        # Используем partial_ratio, чтобы успешно находить "сфера удачи" внутри "р сфера удачи 1"
         result = process.extractOne(
             ru_key,
             candidates,
-            scorer=fuzz.partial_ratio,
-            score_cutoff=FUZZY_THRESHOLD * 100  # Переводим порог (0.82) в шкалу rapidfuzz (82.0)
+            scorer=fuzz.ratio,
+            score_cutoff=FUZZY_THRESHOLD * 100,
         )
-        
+
         if result:
             best_key, score, _ = result
-            return best_key, score / 100.0  # Возвращаем к исходному диапазону 0.0 - 1.0
-            
+            return best_key, score / 100.0
+
         return None, 0.0
 
     def _best_suffix(self, ru_key: str) -> str | None:
